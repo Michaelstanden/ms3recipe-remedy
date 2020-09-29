@@ -47,6 +47,11 @@ def edit_recipe():
     return render_template('edit_recipe.html')
 
 
+@app.route('/contact_us')
+def contact_us():
+    return render_template('contact.html')
+
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
