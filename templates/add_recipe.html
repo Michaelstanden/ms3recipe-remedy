@@ -11,9 +11,9 @@ Sharing is caring and a great way to build up the recipe remedy culture.</h1>
     <form action="{{ url_for('add_recipe') }}" method="POST" class="col s12">
     <div class="row">
         <div class="input-field col s12">
-          <i class="material-icons prefix">plus_circle</i>
+          <i class="material-icons prefix">restaurant</i>
           <input id="cuisine_type" name="cuisine_type" type="text" class="validate" required>
-          <label for="recipe">Cuisine Type (e.g Asian, European, African)</label>
+          <label for="recipe">Cuisine Type (e.g Asian, African)</label>
         </div>
        </div>
       <div class="row">
@@ -66,13 +66,17 @@ Sharing is caring and a great way to build up the recipe remedy culture.</h1>
         </div>
       </div>
       <div class="row">
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">today</i>
+                <input id="posted_date" name="posted_date" type="text" class="datepicker" required>
+                <label for="icon_prefix">Posted Date</label>
+            </div>
+         <div class="row">
         <div class="input-field col s12">
-          <i class="material-icons prefix">web</i>
-          <select id="date_posted" name="date_posted">
-          <label for="date_posted">Choose Date From calander</label>
-                     <!--insert calander date picker and use js to pick the date that it actually is.(limited option)
-                     Research this.-->          
-        </select>
+        <i class="material-icons prefix">insert_link</i>
+          <input id="image_url" name="image_url" type="text" class="validate">
+          <label for="image_url">Image of recipe</label>
         </div>
-       </div>
+      </div>
 {% endblock %}
