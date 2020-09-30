@@ -37,9 +37,14 @@ def dessert():
     return render_template('dessert.html')
 
 
-@app.route('/add_recipe')
+@app.route('/add_recipe', methods=['GET', 'POST'])
 def add_recipe():
-    return render_template('add_recipe.html')
+    if request.method == 'POST':
+        recipe = mongo.db.recipe
+        recipe.insert_one(request.form.to_dict())
+        return redirect(url_for('recipe.html'))
+    return render_template('add_recipe.html',
+                           categories=mongo.db.categories.find())
 
 
 @app.route('/edit_recipe')
