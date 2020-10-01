@@ -53,12 +53,28 @@ def add_recipe():
 
 @app.route('/edit_recipe/<recipe_id>', methods=['POST'])
 def edit_recipe():
-    def edit_recipe(recipe_id):
-        the_recipe = mongo.db.recipe.find_one({'_id': ObjectId(recipe_id)})
+    def edit_recipe(_id):
+        the_recipe = mongo.db.recipe.find_one({'recipe_id': ObjectId(_id)})
         all_categories = mongo.db.category.find()
         return render_template('edit_recipe.html', recipe=the_recipe,
                         category=all_categories)
 
+
+@app.route('/edit_recipe/<recipe_id>', methods=['POST'])
+def update_recipe(recipe_id):
+    recipe = mongo.db.recipe
+    recipe.update({'_id': ObjectId(recipe_id)}, {
+        'recipe_name': request.form.get('recipe_name'),
+        'recipe_description': request.form.get('recipe_description'),
+        'cuisine_type': request.form.get('cuisine_type'),
+        'prep_time': request.form.get('prep_time'),
+        'cooking_time': request.form.get('cooking_time'),
+        'servings': request.form.get('servings'),
+        'method': request.form.get('method'),
+        'posted_date': request.form.get('posted_date'),
+        'image_url': request.form.get('image_url'),
+        })
+    return redirect(url_for('recipe'))
 
 @app.route('/contact_us')
 def contact_us():
