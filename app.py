@@ -16,6 +16,10 @@ app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
 
+# Create index for recipe titles in recipe collection
+
+mongo.db.Recipes.create_index([('recipe_name', 'text')])
+
 @app.route('/')
 @app.route('/home')
 def index():
@@ -47,14 +51,19 @@ def add_recipe():
                            recipe=mongo.db.recipe.find())
 
 
-@app.route('/edit_recipe')
+@app.route('/edit_recipe/<recipe_id>', methods=['POST'])
 def edit_recipe():
-    return render_template('edit_recipe.html')
+    def edit_recipe(recipe_id):
+        the_recipe = mongo.db.recipe.find_one({'_id': ObjectId(recipe_id)})
+        all_categories = mongo.db.category.find()
+        return render_template('edit_recipe.html', recipe=the_recipe,
+                        category=all_categories)
 
 
 @app.route('/contact_us')
 def contact_us():
     return render_template('contact.html')
+
 
 
 
