@@ -11,14 +11,14 @@ if path.exists("env.py"):
 
 SECRET_KEY = os.environ.get('MONGO_URI')
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = 'Recipes'
+app.config["MONGO_DBNAME"] = 'Recipe'
 app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
 
 # Create index for recipe titles in recipe collection
 
-mongo.db.Recipes.create_index([('recipe_name', 'text')])
+mongo.db.recipe.create_index([('recipe_name', 'text')])
 
 @app.route('/')
 @app.route('/home')
@@ -43,8 +43,8 @@ def dessert():
 
 @app.route('/recipe')
 def recipe():
-    recipe = mongo.db.recipe.find().sort("_id", -1)
-    return render_template('recipe.html')
+    recipe = mongo.db.recipe.find().sort("_id", 1)
+    return render_template('recipe.html', recipe=recipe)
 
 
 
@@ -62,6 +62,13 @@ def add_recipe():
 @app.route('/edit_recipe', methods=['POST'])
 def edit_recipe():
         return render_template('edit_recipe.html')
+
+
+
+@app.route('/recipe_full/<recipe_id>')
+def recipe_full(recipe_id):
+    the_recipe = mongo.db.recipe.find_one({'_id': ObjectId(recipe_id)})
+    return render_template('recipe.html', recipe=the_recipe)
 
 
 
