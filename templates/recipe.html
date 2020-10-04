@@ -1,22 +1,22 @@
 {% extends 'base.html'%}
 {% block content %}
-{% for recipe in recipes %}
+{% for recipes in recipes %}
 <!--RECIPE CARDS(snippet of the recipe, full description in breakfast, dinner, dessert.html pages)-->
 <div class="container">
     <div class="card mb-3">
         <div class="row no-gutters">
             <div class="col-md-4 card-img">
-                <img src="{{recipe.image_url}}" class="card-img" alt="Logo" />
+                <img src="{{recipes.image_url}}" class="card-img" alt="Logo" />
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <a href="{{ url_for('recipe', Recipe_id=Recipe._id) }}"><h4>{{recipe.recipe_name}}</h4></a>
-                    <h5 class="card-title">{{recipe.recipe_name}}</h5>
-                    <h6 class="card-title"><i class="material-icons prefix">restaurant</i>{{recipe.recipe_description}}</h6>
-                    <h6 class="card-title"><i class="material-icons prefix">schedule</i>{{recipe.prep_time}}</h6>
-                    <h6 class="card-title"><i class="material-icons prefix">shcedule</i>{{recipe.servings}}</h6>
-                    <h6 class="card-title"><i class="material-icons prefix">schedule</i>{{recipe.cooking_time}}</h6>
-                        <a href="{{ url_for('breakfast') }}" class="mr-3 text-decoration-none waves-effect waves-light btn">
+                    <a href="{{ url_for('recipe', recipes_id=recipes._id) }}"><h4>{{recipes.recipe_name}}</h4></a>
+                    <h5 class="card-title">{{recipes.recipe_name}}</h5>
+                    <h6 class="card-title"><i class="material-icons prefix">restaurant</i>{{recipes.recipe_description}}</h6>
+                    <h6 class="card-title"><i class="material-icons prefix">schedule</i>{{recipes.prep_time}}</h6>
+                    <h6 class="card-title"><i class="material-icons prefix">shcedule</i>{{recipes.servings}}</h6>
+                    <h6 class="card-title"><i class="material-icons prefix">schedule</i>{{recipes.cooking_time}}</h6>
+                        <a href="{{ url_for('breakfast') }}" class="mr-3 text-decoration-none btn">
                                 Click here to see full recipe.
                                 <i class="material-icons right">send</i>
                         </a>

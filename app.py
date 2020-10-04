@@ -43,8 +43,8 @@ def dessert():
 
 @app.route('/recipe')
 def recipe():
-    recipe = mongo.db.recipe.find().sort("_id", 1)
-    return render_template('recipe.html', recipe=recipe)
+    recipes = mongo.db.recipe.find().sort("_id", 1)
+    return render_template('recipe.html', recipes=recipes)
 
 
 
