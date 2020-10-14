@@ -10,17 +10,17 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <a href="{{ url_for('recipe', recipes_id=recipes._id) }}"><h4>{{recipes.recipe_name}}</h4></a>
+                    <a href="{{ url_for('recipe', recipe_id=recipes._id) }}"><h4>{{recipes.recipe_name}}</h4></a>
                     <h5 class="card-title">{{recipes.recipe_name}}</h5>
                     <h6 class="card-title"><i class="material-icons prefix">restaurant</i>{{recipes.recipe_description}}</h6>
                     <h6 class="card-title"><i class="material-icons prefix">schedule</i>{{recipes.prep_time}}</h6>
                     <h6 class="card-title"><i class="material-icons prefix">shcedule</i>{{recipes.servings}}</h6>
                     <h6 class="card-title"><i class="material-icons prefix">schedule</i>{{recipes.cooking_time}}</h6>
-                        <a href="{{ url_for('breakfast') }}" class="mr-3 text-decoration-none btn">
+                        <a href="{{ url_for('recipe') }}" class="mr-3 text-decoration-none btn">
                                 Click here to see full recipe.
                                 <i class="material-icons right">send</i>
                         </a>
-                        <a href="{{ url_for('edit_recipe') }}" class="mr-3 text-decoration-none btn">
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipes._id) }}" class="mr-3 text-decoration-none btn">
                                 Edit Recipe
                                 <i class="material-icons right">mode_edit</i>
                         </a>

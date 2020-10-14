@@ -68,25 +68,28 @@ def recipe_full(recipe_id):
 
 
 
-@app.route('/edit_recipe/<recipe_id>', methods=["GET","POST"])
+@app.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
 def edit_recipe(recipe_id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    recipes = mongo.db.recipe.find().sort("_id", 1)
-    return render_template('edit_recipe.html', recipe=recipe, recipes=recipes)
-    
-    #recipe.update({'_id': ObjectId(recipe_id)}, {
-        #'recipe_name': request.form.get('recipe_name'),
-        #'recipe_description': request.form.get('recipe_description'),
-        #'cuisine_type': request.form.get('cuisine_type'),
-        #'prep_time': request.form.get('prep_time'),
-        #'cooking_time': request.form.get('cooking_time'),
-        #'servings': request.form.get('servings'),
-        #'method': request.form.get('method'),
-       # 'posted_date': request.form.get('posted_date'),
-      #  'image_url': request.form.get('image_url'),
-       # })
-        
-    #return redirect(url_for('recipe'))
+    if request.method == 'POST':
+        recipe = mongo.db.recipes
+        recipe.update({'_id': ObjectId(recipe_id)}, {
+            'recipe_name': request.form.get('recipe_name'),
+            'cuisine_type': request.form.get('cuisine_type'),
+            'recipe_description': request.form.get('recipe_description'),
+            'cooking_time': request.form.get('cooking_time'),
+            'prep_time': request.form.get('prep_time'),
+            'servings': request.form.get('servings'),
+            'ingredients': request.form.get('ingredients'),
+            'posted_date': request.form.get('posted_date'),
+            'method': request.form.get('method'),
+            'image_url': request.form.get('image_url'),
+            })
+        return redirect(url_for('full_recipe'))
+    else:
+        the_recipe = mongo.db.recipe.find_one({'_id': ObjectId(recipe_id)})
+        all_recipes = mongo.db.recipe.find()
+        return render_template('edit_recipe.html', recipe=the_recipe,
+                           recipes=all_recipes)
 
 @app.route('/contact_us')
 def contact_us():
