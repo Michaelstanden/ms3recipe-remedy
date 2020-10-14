@@ -84,7 +84,7 @@ def edit_recipe(recipe_id):
             'method': request.form.get('method'),
             'image_url': request.form.get('image_url'),
             })
-        return redirect(url_for('full_recipe'))
+        return redirect(url_for('recipe'))
     else:
         the_recipe = mongo.db.recipe.find_one({'_id': ObjectId(recipe_id)})
         all_recipes = mongo.db.recipe.find()
