@@ -1,0 +1,85 @@
+{% extends 'base.html'%}
+{% block content %}
+<h1>Add your own recipes here.
+Simply fill out the form below to add your own recipes to the site.<br>
+Sharing is caring and a great way to build up the recipe remedy culture.</h1>
+
+<!--POST A RECIPE FORM-->
+<div class="container mt-5">
+<h1 class="text-center mb-5">Edit Your Recipe</h1>
+<div class="row">
+    <form action="{{ url_for('add_recipe') }}" method="POST" class="col s12">
+    <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">restaurant</i>
+          <input id="cuisine_type" name="cuisine_type" type="text" class="validate" required>
+          <label for="recipe">Cuisine Type (e.g Asian, African)</label>
+        </div>
+       </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">create</i>
+          <input id="recipe_name" name="recipe_name" type="text" class="validate" required>
+          <label for="recipe_name">Recipe Name</label>
+        </div>
+       </div>
+       <div class="row">
+        <div class="input-field col s12">
+        <i class="material-icons prefix">create</i>
+          <textarea id="textarea1" name="recipe_description" class="materialize-textarea" required></textarea>
+          <label for="textarea1">Recipe Description</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+        <i class="material-icons prefix">timelapse</i>
+          <input id="prep_time" name="prep_time" type="int" class="validate prep_time" required>
+          <label for="prep_time">Prep Time (minutes) </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+        <i class="material-icons prefix">schedule</i>
+          <input id="cooking_time" name="cooking_time" type="int" class="validate" required>
+          <label for="cooking_time">Cooking Time (minutes) </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+          <input id="servings" name="servings" type = "int" class="validate" required>
+          <label for="servings">Serves How many people?</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">kitchen</i>
+          <textarea id="textarea2" name="ingredients" class="materialize-textarea" required></textarea>
+          <label for="textarea2">Ingredients</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+        <i class="material-icons prefix">sort</i>
+          <textarea id="textarea3" name="method" class="materialize-textarea" required></textarea>
+          <label for="textarea3">How to make this recipe</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">Today</i>
+                <input id="posted_date" name="posted_date" type="text" class="datepicker" placeholder="datepicker" required>
+                
+            </div>
+         <div class="row">
+        <div class="input-field col s12">
+        <i class="material-icons prefix">insert_link</i>
+          <input id="image_url" name="image_url" type="text" class="validate">
+          <label for="image_url">Image of recipe</label>
+        </div>
+      </div>
+
+      <input type="submit" value="Submit">
+      
+{% endblock %}
