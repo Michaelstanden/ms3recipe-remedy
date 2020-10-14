@@ -7,7 +7,7 @@ Simply fill out the form below to edit recipes to the site..</h1>
 <div class="container mt-5">
 <h1 class="text-center mb-5">Edit Your Recipe</h1>
 <div class="row">
-    <form action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
+    <form action="{{ url_for('edit_recipe', recipe_id=recipes._id) }}" method="POST" class="col s12">
     <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">restaurant</i>
@@ -20,6 +20,7 @@ Simply fill out the form below to edit recipes to the site..</h1>
           <i class="material-icons prefix">create</i>
           <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipes.recipe_name}}" required>
           <label for="recipe_name">Recipe Name</label>
+         
         </div>
        </div>
        <div class="row">

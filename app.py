@@ -68,7 +68,7 @@ def recipe_full(recipe_id):
 
 
 
-@app.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
+@app.route('/edit_recipe/<recipes_id>', methods=['GET', 'POST'])
 def edit_recipe(recipe_id):
     if request.method == 'POST':
         recipe = mongo.db.recipes
