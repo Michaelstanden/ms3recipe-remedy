@@ -29,6 +29,7 @@ def index():
 @app.route('/breakfast')
 def breakfast():
     return render_template('breakfast.html')
+    
 
 
 @app.route('/lunch')
@@ -72,21 +73,21 @@ def recipe_full(recipe_id):
 
 
 
-#@app.route('/edit_recipe/<recipe_id>', methods=['POST'])
-#def update_recipe(recipe_id):
+@app.route('/edit_recipe/<recipe_id>', methods=['GET','POST'])
+def update_recipe(recipe_id):
     
-    #recipe = mongo.db.recipe
-    #recipe.update({'_id': ObjectId(recipe_id)}, {
-        #'recipe_name': request.form.get('recipe_name'),
-        #'recipe_description': request.form.get('recipe_description'),
-        #'cuisine_type': request.form.get('cuisine_type'),
-        #'prep_time': request.form.get('prep_time'),
-        #'cooking_time': request.form.get('cooking_time'),
-        #'servings': request.form.get('servings'),
-        #'method': request.form.get('method'),
-        #'posted_date': request.form.get('posted_date'),
-        #'image_url': request.form.get('image_url'),
-        #})
+    recipe = mongo.db.recipe
+    recipe.update({'_id': ObjectId(recipe_id)}, {
+        'recipe_name': request.form.get('recipe_name'),
+        'recipe_description': request.form.get('recipe_description'),
+        'cuisine_type': request.form.get('cuisine_type'),
+        'prep_time': request.form.get('prep_time'),
+        'cooking_time': request.form.get('cooking_time'),
+        'servings': request.form.get('servings'),
+        'method': request.form.get('method'),
+        'posted_date': request.form.get('posted_date'),
+        'image_url': request.form.get('image_url'),
+        })
         
     #return redirect(url_for('recipe'))
 
