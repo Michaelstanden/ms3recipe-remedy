@@ -92,7 +92,10 @@ def edit_recipe(recipe_id):
                            recipes=all_recipes)
 
 
-
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    mongo.db.recipe.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('recipe'))
 
 
 @app.route('/contact_us')
