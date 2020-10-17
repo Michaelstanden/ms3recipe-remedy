@@ -68,10 +68,10 @@ def recipe_full(recipe_id):
 
 
 
-@app.route('/edit_recipe/<recipes_id>', methods=['GET', 'POST'])
+@app.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
 def edit_recipe(recipe_id):
     if request.method == 'POST':
-        recipe = mongo.db.recipes
+        recipe = mongo.db.recipe
         recipe.update({'_id': ObjectId(recipe_id)}, {
             'recipe_name': request.form.get('recipe_name'),
             'cuisine_type': request.form.get('cuisine_type'),
@@ -90,6 +90,10 @@ def edit_recipe(recipe_id):
         all_recipes = mongo.db.recipe.find()
         return render_template('edit_recipe.html', recipe=the_recipe,
                            recipes=all_recipes)
+
+
+
+
 
 @app.route('/contact_us')
 def contact_us():
