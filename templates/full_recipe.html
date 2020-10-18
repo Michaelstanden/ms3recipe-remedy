@@ -1,0 +1,110 @@
+{% extends 'base.html'%} {% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-5 font-weight-bolder">{{recipe.recipe_name}} </h2>
+    <div class="card mb-3">
+        <div class="row no-gutters mb-0">
+            {% if recipe.image_url %}
+            <div class="col-md-5 card-img">
+                <img src="{{recipe.image_url}}" class="card-img" alt="Logo" />
+            </div>
+            {% else %}
+            <div class="col-md-5 card-img">
+                <img src="{{url_for('static', filename='img/default-image.jpg')}}" class="card-img" alt="Logo" />
+            </div>
+            {% endif %}
+            <div class="col-md-7">
+                <div class="card-body">
+                    <a href="{{url_for('full_recipe', recipe_id=recipe._id)}}"><h3>{{recipe.recipe_name}}</h3></a>
+                    <h6 class="card-title"><i class="material-icons prefix">restaurant</i>{{recipe.cuisine_type}}</h6>
+                    <h6 class="card-title"><i class="material-icons prefix">schedule</i>{{recipe.prep_time}}</h6>
+                    <h6 class="card-title"><i class="material-icons prefix">schedule</i>{{recipe.cooking_time}}</h6>
+                    <h6 class="card-title"><i class="material-icons prefix">today</i>{{recipe.posted_date}}</h6>
+                    <div class="row justify-content-sm-center justify-content-md-end action-btns">
+                        <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="mr-3 text-decoration-none waves-effect waves-light btn action-btn">
+                            Edit Recipe
+                            <i class="material-icons right">mode_edit</i>
+                        </a>
+                        <button class="waves-effect waves-light btn action-btn" type="button" name="action" data-toggle="modal" data-target="#staticBackdrop">
+                            Delete Recipe
+                            <i class="material-icons right">delete</i>
+                        </button>
+                        <!--DELETE RECIPE MODAL-->
+                        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel"><i class="material-icons left">warning</i>Delete Recipe</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body pb-5">
+                                        <h6>Are you sure you want to Delete this Recipe?</h6>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="text-decoration-none waves-effect waves-light btn btn-danger"> <i class="material-icons left">delete</i>Delete </a>
+                                        <button type="cancel" class="btn btn-secondary ml-3" data-dismiss="modal"><i class="material-icons left">cancel</i>Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--FURTHER RECIPE INFORMATION INCLUDING METHODS AND INGREDIENTS -->
+<div class="container">
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-6">
+                <button type="button" class="btn btn-lg description-btn">Recipe Details</button>
+            </div>
+            <div class="col-md-6">
+                <button type="button" class="btn btn-lg details-btn">Preperation and Cooking methods</button>
+            </div>
+            <div class="col-md-12 description mt-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="extra-info text-center">
+                            <h4 class="font-weight-bold border-bottom">Description</h4>
+                            <p>{{recipe.recipe_description}}</p>
+                            <p></p>
+                            <h4 class="font-weight-bold border-bottom">Preperation Time</h4>
+                            <p>{{recipe.prep_time}}</p>
+                            <h4 class="font-weight-bold border-bottom">Cooking Time</h4>
+                            <p>{{recipe.cooking_time}}</p>
+                            <h4 class="font-weight-bold border-bottom">Ingredients</h4>
+                            <p>{{recipe.ingredients}}</p>
+                            <h4 class="font-weight-bold border-bottom">Date Posted</h4>
+                            <p>{{recipe.posted_date}}</p>
+                            <h4 class="font-weight-bold border-bottom">Servings</h4>
+                            <p>{{recipe.servings}}</p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 d-none mt-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="text-center mb-5">
+                            {% if recipe.image_url %}
+                            <img src="{{recipe.image_url}}" class="rounded" alt="Image of Recipe outcome" />
+                            {% else %}
+                            <img src="{{url_for('static', filename='img/default-image.jpg')}}" class="rounded" alt="Defualt image of smiling cartoon chef" />
+                            {% endif %}
+                        </div>
+                        <div class="text-center">
+                            <h4 class="font-weight-bold border-bottom">Preperation</h4>
+                            <p>{{recipe.prep_steps}}</p>
+                            <h4 class="font-weight-bold border-bottom">Cooking method</h4>
+                            <p>{{recipe.method}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

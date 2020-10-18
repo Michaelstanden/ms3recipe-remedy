@@ -103,6 +103,9 @@ def contact_us():
     return render_template('contact.html')
 
 
+@app.route('/full_recipe')
+def full_recipe():
+    return render_template('full_recipe.html')
 
 
 if __name__ == '__main__':
