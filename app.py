@@ -44,7 +44,7 @@ def dessert():
 
 @app.route('/recipe')
 def recipe():
-    recipes = mongo.db.recipe.find().sort("_id", 1)
+    recipes = mongo.db.recipe.find().sort("_id", -1)
     return render_template('recipe.html', recipes=recipes)
 
 
@@ -60,14 +60,7 @@ def add_recipe():
                            recipe=mongo.db.recipe.find())
 
 
-
-@app.route('/recipe_card/<recipe_id>')
-def recipe_card(recipe_id):
-    the_recipe = mongo.db.recipe.find_one({'_id': ObjectId(recipe_id)})
-    return render_template('recipe.html', recipe=the_recipe)
-
-
-
+#edit recipe in edit form, this will change the recipe in the database and on screen
 @app.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
 def edit_recipe(recipe_id):
     if request.method == 'POST':
@@ -91,19 +84,19 @@ def edit_recipe(recipe_id):
         return render_template('edit_recipe.html', recipe=the_recipe,
                            recipes=all_recipes)
 
-
+#deletes a recipe from the datbase and the screen
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     mongo.db.recipe.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('recipe'))
 
-
+#contact us render
 @app.route('/contact_us')
 def contact_us():
     return render_template('contact.html')
 
-
-@app.route('/full_recipe')
+#function to show recipes in full
+@app.route('/full_recipe/<recipe_id>')
 def full_recipe(recipe_id):
     the_recipe = mongo.db.recipe.find_one({'_id': ObjectId(recipe_id)})
     return render_template('full_recipe.html', recipe=the_recipe)
