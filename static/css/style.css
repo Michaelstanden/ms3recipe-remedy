@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Sansita+Swashed&display=swap');
+
+
+.title-heading {
+text-align: center;
+padding: 10px;
+font-family: 'Sansita Swashed', cursive;
+font-size: 4em;
+}
+
+.heading-description {
+padding: 20px;
+margin: 10px;
+font-family: 'Open Sans', sans-serif;
+}
+
+.btn-links {   
+text-align :center;
+font-size: 2em;
+border-radius: 10px;
+padding:5px;
+margin: 30px;
+}
+
+.btn-display {
+    display: flex;
+    justify-content: center;
+}
