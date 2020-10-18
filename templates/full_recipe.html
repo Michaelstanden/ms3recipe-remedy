@@ -68,9 +68,14 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="extra-info text-center">
+                         {% if recipe.image_url %}
+                            <img src="{{recipe.image_url}}" class="rounded" alt="Image of Recipe outcome" />
+                            {% else %}
+                            <img src="{{url_for('static', filename='img/default-image.jpg')}}" class="rounded" alt="Defualt image of smiling cartoon chef" />
+                            {% endif %}
+                            <p></p>
                             <h4 class="font-weight-bold border-bottom">Description</h4>
                             <p>{{recipe.recipe_description}}</p>
-                            <p></p>
                             <h4 class="font-weight-bold border-bottom">Preperation Time</h4>
                             <p>{{recipe.prep_time}}</p>
                             <h4 class="font-weight-bold border-bottom">Cooking Time</h4>
@@ -81,27 +86,14 @@
                             <p>{{recipe.posted_date}}</p>
                             <h4 class="font-weight-bold border-bottom">Servings</h4>
                             <p>{{recipe.servings}}</p> 
+                            <h4 class="font-weight-bold border-bottom">Cooking method</h4>
+                            <p>{{recipe.method}}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-12 d-none mt-3">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="text-center mb-5">
-                            {% if recipe.image_url %}
-                            <img src="{{recipe.image_url}}" class="rounded" alt="Image of Recipe outcome" />
-                            {% else %}
-                            <img src="{{url_for('static', filename='img/default-image.jpg')}}" class="rounded" alt="Defualt image of smiling cartoon chef" />
-                            {% endif %}
-                        </div>
-                        <div class="text-center">
-                            <h4 class="font-weight-bold border-bottom">Preperation</h4>
-                            <p>{{recipe.prep_steps}}</p>
-                            <h4 class="font-weight-bold border-bottom">Cooking method</h4>
-                            <p>{{recipe.method}}</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
