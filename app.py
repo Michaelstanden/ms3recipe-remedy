@@ -61,8 +61,8 @@ def add_recipe():
 
 
 
-@app.route('/recipe_full/<recipe_id>')
-def recipe_full(recipe_id):
+@app.route('/recipe_card/<recipe_id>')
+def recipe_card(recipe_id):
     the_recipe = mongo.db.recipe.find_one({'_id': ObjectId(recipe_id)})
     return render_template('recipe.html', recipe=the_recipe)
 
@@ -104,8 +104,9 @@ def contact_us():
 
 
 @app.route('/full_recipe')
-def full_recipe():
-    return render_template('full_recipe.html')
+def full_recipe(recipe_id):
+    the_recipe = mongo.db.recipe.find_one({'_id': ObjectId(recipe_id)})
+    return render_template('full_recipe.html', recipe=the_recipe)
 
 
 if __name__ == '__main__':
