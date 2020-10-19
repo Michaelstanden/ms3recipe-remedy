@@ -50,3 +50,10 @@ font-family: 'Playfair Display', serif;
 background-color: #4fc9b8;
 font-family: 'Playfair Display', serif;
 }
+
+.recipe-text {
+ font-family: 'Playfair Display' , serif;
+ font-size: 2em;
+ text-transform: uppercase;
+ padding: 15px;
+}
