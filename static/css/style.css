@@ -14,6 +14,15 @@ margin: 10px;
 font-family: 'Open Sans', sans-serif;
 }
 
+.hero-image {
+width: 100%;
+height: auto;
+display: flex;
+justify-content: center;
+border: double rgb(13, 14, 13) 10px;
+background-color:coral;
+}
+
 .btn-links {   
 text-align :center;
 font-size: 2em;
