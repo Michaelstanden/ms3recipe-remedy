@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Sansita+Swashed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 
 
 .title-heading {
 text-align: center;
 padding: 10px;
-font-family: 'Sansita Swashed', cursive;
+font-family: 'Playfair Display', serif;
 font-size: 4em;
 color: #ffffff;
 }
@@ -22,9 +23,9 @@ position: relative;
     height: auto;
     min-height: 5rem;
     padding: 5rem 0;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 8, 8, 0.3)), color-stop(75%, rgba(0, 0, 0, 0.7)), to(#757373)), url(../images/rr-landing-img.jpg);
-    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(8, 8, 8, 0.3) 75%, #757373 100%), url(../images/rr-landing-img.jpg);
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(8, 8, 8, 0.3)) 75%, #757373 100%), url(../images/rr-landing-img.jpg));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 8, 8, 0.8)), color-stop(75%, rgba(0, 0, 0, 0.7)), to(#757373)), url(../images/rr-landing-img.jpg);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(8, 8, 8, 0.8) 75%, #757373 100%), url(../images/rr-landing-img.jpg);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(8, 8, 8, 0.8) 75%, #757373 100%), url(../images/rr-landing-img.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -37,9 +38,15 @@ font-size: 2em;
 border-radius: 10px;
 padding:5px;
 margin: 30px;
+font-family: 'Playfair Display', serif;
 }
 
 .btn-display {
     display: flex;
     justify-content: center;
+}
+
+.navigation {
+background-color: #4fc9b8;
+font-family: 'Playfair Display', serif;
 }
