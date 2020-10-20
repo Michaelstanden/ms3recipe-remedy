@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Sansita+Swashed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 
+body {
+background-color:rgb(165, 161, 161);
+}
 
 .title-heading {
 text-align: center;
@@ -49,6 +52,16 @@ font-family: 'Playfair Display', serif;
 .navigation {
 background-color: #4fc9b8;
 font-family: 'Playfair Display', serif;
+}
+
+/*full-recipe stylings*/
+.recipe-heading{
+    border: 5px solid;
+    background-color: #ffffff;
+}
+
+.recipe-card {
+    border: 5px solid;
 }
 
 .recipe-text {

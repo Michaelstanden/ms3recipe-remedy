@@ -1,7 +1,7 @@
 {% extends 'base.html'%} {% block content %}
 <div class="container mt-5">
-    <h2 class="text-center mb-5 font-weight-bolder recipe-text">{{recipe.recipe_name}} </h2>
-    <div class="card mb-3">
+    <h2 class="text-center mb-5 font-weight-bolder recipe-text recipe-heading">{{recipe.recipe_name}} </h2>
+    <div class="card mb-3 recipe-card">
         <div class="row no-gutters mb-0">
             {% if recipe.image_url %}
             <div class="col-md-5 card-img">
@@ -56,7 +56,7 @@
 </div>
 <!--FURTHER RECIPE INFORMATION INCLUDING METHODS AND INGREDIENTS -->
 <div class="container text-center">
-    <div class="card mb-3">
+    <div class="card mb-3 recipe-card">
         <div class="row no-gutters">
             <div class="col-md-12">
                 <h3>Recipe Details</h3>
