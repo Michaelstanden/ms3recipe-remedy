@@ -95,3 +95,12 @@ font-family: 'Playfair Display', serif;
     color: #000000;
     text-decoration: underline;
 }
+
+/*add recipe stylings*/ 
+.info-text {
+ font-family: 'Playfair Display' , serif;
+ font-size: 2em;
+ text-transform: uppercase;
+ padding: 15px;
+ margin: 50px;
+}
