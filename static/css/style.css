@@ -64,6 +64,7 @@ font-family: 'Playfair Display', serif;
 
 .recipe-card {
     border: 5px solid;
+    padding: 15px;
 }
 
 .recipe-text {
@@ -86,6 +87,8 @@ font-family: 'Playfair Display', serif;
     padding-bottom: 10px;
     margin: 10px;
     font-family: 'Playfair Display' , serif;
+    display: flex;
+    justify-content: center;
 }
 
 .full-recipe-name {
