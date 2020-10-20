@@ -6,7 +6,11 @@
     <div class="card mb-3">
         <div class="row no-gutters">
             <div class="col-md-4 card-img">
-                <img src="{{recipe.image_url}}" class="card-img" alt="Logo" />
+                {% if recipe.image_url %}
+                            <img src="{{recipe.image_url}}" class="rounded" alt="Image of Recipe outcome" />
+                            {% else %}
+                            <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded" alt="Defualt image of smiling cartoon chef" />
+                            {% endif %}
             </div>
             <div class="col-md-8">
                 <div class="card-body">

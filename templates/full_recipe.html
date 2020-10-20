@@ -4,19 +4,15 @@
     <div class="card mb-3 recipe-card">
         <div class="row no-gutters mb-0">
             {% if recipe.image_url %}
-            <div class="col-md-5 card-img">
-                <img src="{{recipe.image_url}}" class="card-img" alt="Logo" />
-            </div>
-            {% else %}
-            <div class="col-md-5 card-img">
-                <img src="{{url_for('static', filename='img/default-image.jpg')}}" class="card-img" alt="Logo" />
-            </div>
-            {% endif %}
+                            <img src="{{recipe.image_url}}" class="rounded" alt="Image of Recipe outcome" />
+                            {% else %}
+                            <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded" alt="Defualt image of smiling cartoon chef" />
+                            {% endif %}
             <div class="col-md-7">
                 <div class="card-body">
                     <a href="{{url_for('full_recipe', recipe_id=recipe._id)}}"><h3 class="recipe-text full-recipe-name">{{recipe.recipe_name}}</h3></a>
                     <h6 class="card-title  recipe-text"><i class="material-icons prefix">restaurant</i> {{recipe.cuisine_type}}</h6>
-                    <h6 class="card-title recipe-text">Prep Time <br><i class="material-icons prefix">schedule</i>{{recipe.prep_time}} </h6>
+                    <h6 class="card-title recipe-text">Prep Time <i class="material-icons prefix">schedule</i>{{recipe.prep_time}} </h6>
                     <h6 class="card-title recipe-text">Cooking Time <br><i class="material-icons prefix">schedule</i>{{recipe.cooking_time}} </h6>
                     <h6 class="card-title recipe-text"><i class="material-icons prefix">today</i>{{recipe.posted_date}}</h6>
                     <div class="row justify-content-sm-center justify-content-md-end action-btns">
