@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Sansita+Swashed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla:wght@100&display=swap');
+
 
 body {
-background-color:rgb(165, 161, 161);
+background-color:rgb(202, 194, 243);
 }
 
 .title-heading {
@@ -69,4 +71,24 @@ font-family: 'Playfair Display', serif;
  font-size: 2em;
  text-transform: uppercase;
  padding: 15px;
+}
+
+.recipe-p-text {
+ font-family: 'Piazzolla', serif;
+ font-size: 2em;
+ text-transform: uppercase;
+ padding: 15px;
+ font-weight: 200;
+}
+
+.action-btn {
+    border: solid 2px;
+    padding-bottom: 10px;
+    margin: 10px;
+    font-family: 'Playfair Display' , serif;
+}
+
+.full-recipe-name {
+    color: #000000;
+    text-decoration: underline;
 }

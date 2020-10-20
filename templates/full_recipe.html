@@ -14,10 +14,10 @@
             {% endif %}
             <div class="col-md-7">
                 <div class="card-body">
-                    <a href="{{url_for('full_recipe', recipe_id=recipe._id)}}"><h3 class="recipe-text">{{recipe.recipe_name}}</h3></a>
-                    <h6 class="card-title  recipe-text"><i class="material-icons prefix">restaurant</i>{{recipe.cuisine_type}}</h6>
-                    <h6 class="card-title recipe-text"><i class="material-icons prefix">schedule</i>{{recipe.prep_time}}</h6>
-                    <h6 class="card-title recipe-text"><i class="material-icons prefix">schedule</i>{{recipe.cooking_time}}</h6>
+                    <a href="{{url_for('full_recipe', recipe_id=recipe._id)}}"><h3 class="recipe-text full-recipe-name">{{recipe.recipe_name}}</h3></a>
+                    <h6 class="card-title  recipe-text"><i class="material-icons prefix">restaurant</i> {{recipe.cuisine_type}}</h6>
+                    <h6 class="card-title recipe-text">Prep Time <br><i class="material-icons prefix">schedule</i>{{recipe.prep_time}} </h6>
+                    <h6 class="card-title recipe-text">Cooking Time <br><i class="material-icons prefix">schedule</i>{{recipe.cooking_time}} </h6>
                     <h6 class="card-title recipe-text"><i class="material-icons prefix">today</i>{{recipe.posted_date}}</h6>
                     <div class="row justify-content-sm-center justify-content-md-end action-btns">
                         <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="mr-3 text-decoration-none waves-effect waves-light btn action-btn">
@@ -59,7 +59,7 @@
     <div class="card mb-3 recipe-card">
         <div class="row no-gutters">
             <div class="col-md-12">
-                <h3>Recipe Details</h3>
+                <h3 class="recipe-text">Recipe Details</h3>
             </div>
             <div class="col-md-12 description mt-3">
                 <div class="card-body">
@@ -71,20 +71,20 @@
                             <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded" alt="Defualt image of smiling cartoon chef" />
                             {% endif %}
                             <p></p>
-                            <h4 class="font-weight-bold border-bottom recipe-text">Description</h4>
-                            <p class="recipe-text">{{recipe.recipe_description}}</p>
-                            <h4 class="font-weight-bold border-bottom recipe-text">Preperation Time</h4>
-                            <p class="recipe-text">{{recipe.prep_time}}</p>
-                            <h4 class="font-weight-bold border-bottom recipe-text">Cooking Time</h4>
-                            <p class="recipe-text">{{recipe.cooking_time}}</p>
-                            <h4 class="font-weight-bold border-bottom recipe-text">Ingredients</h4>
-                            <p class="recipe-text">{{recipe.ingredients}}</p>
-                            <h4 class="font-weight-bold border-bottom recipe-text">Date Posted</h4>
-                            <p class="recipe-text">{{recipe.posted_date}}</p>
-                            <h4 class="font-weight-bold border-bottom recipe-text">Servings</h4>
-                            <p class="recipe-text">{{recipe.servings}}</p> 
-                            <h4 class="font-weight-bold border-bottom recipe-text">Cooking method</h4>
-                            <p class="recipe-text">{{recipe.method}}</p>
+                            <h4 class=" border-bottom recipe-text">Description</h4>
+                            <p class="recipe-p-text">{{recipe.recipe_description}}</p>
+                            <h4 class=" border-bottom recipe-text">Preperation Time</h4>
+                            <p class="recipe-p-text">{{recipe.prep_time}}</p>
+                            <h4 class="border-bottom recipe-text">Cooking Time</h4>
+                            <p class="recipe-p-text">{{recipe.cooking_time}}</p>
+                            <h4 class=" border-bottom recipe-text">Ingredients</h4>
+                            <p class="recipe-p-text">{{recipe.ingredients}}</p>
+                            <h4 class=" border-bottom recipe-text">Date Posted</h4>
+                            <p class="recipe-p-text">{{recipe.posted_date}}</p>
+                            <h4 class=" border-bottom recipe-text">Servings</h4>
+                            <p class="recipe-p-text">{{recipe.servings}}</p> 
+                            <h4 class="border-bottom recipe-text">Cooking method</h4>
+                            <p class="recipe-p-text">{{recipe.method}}</p>
                         </div>
                     </div>
                 </div>
