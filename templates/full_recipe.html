@@ -3,11 +3,14 @@
     <h2 class="text-center mb-5 font-weight-bolder recipe-text recipe-heading">{{recipe.recipe_name}} </h2>
     <div class="card mb-3 recipe-card">
         <div class="row no-gutters mb-0">
-            {% if recipe.image_url %}
+            <div class="col-md-5 card-img">
+               {% if recipe.image_url %}
                             <img src="{{recipe.image_url}}" class="rounded" alt="Image of Recipe outcome" />
                             {% else %}
                             <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded" alt="Defualt image of smiling cartoon chef" />
-                            {% endif %}
+                            {% endif %} 
+            </div>
+            
             <div class="col-md-7">
                 <div class="card-body">
                     <a href="{{url_for('full_recipe', recipe_id=recipe._id)}}"><h3 class="recipe-text full-recipe-name">{{recipe.recipe_name}}</h3></a>
