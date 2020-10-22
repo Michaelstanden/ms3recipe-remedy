@@ -93,6 +93,10 @@ font-family: 'Playfair Display', serif;
     width: fit-content;
 }
 
+.icons {
+    margin-left: 10px;
+}
+
 .full-recipe-name {
     color: #000000;
     text-decoration: underline;
@@ -115,7 +119,7 @@ width: fit-content;
 
 .form-input {
     width: fit-content;
-    margin-left: 50px
+    margin-left: 70px
 }
 
 .form-icon {
