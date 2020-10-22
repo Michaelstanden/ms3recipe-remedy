@@ -21,7 +21,7 @@
                     <h6 class="card-title recipe-text"><i class="material-icons prefix">schedule</i>Cooking Time (min) <br>{{recipe.cooking_time}}</h6>
                     <h6 class="card-title recipe-text"><i class="material-icons prefix">schedule</i>Servings <br>{{recipe.servings}}</h6>
                         <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="mr-3 text-decoration-none btn action-btn">
-                                Click here to see full recipe.
+                                Full recipe
                                 <i class="material-icons right">send</i>
                         </a>
                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="mr-3 text-decoration-none btn action-btn">
