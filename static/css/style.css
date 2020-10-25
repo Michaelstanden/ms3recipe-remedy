@@ -4,7 +4,7 @@
 
 
 body {
-background-color:rgb(202, 194, 243);
+background-color:rgb(217, 255, 240);
 }
 
 .title-heading {
@@ -112,23 +112,33 @@ font-family: 'Playfair Display', serif;
  margin: 50px;
 }
 
+.edit-header {
+ font-family: 'Playfair Display' , serif;
+ font-size: 2em;
+ text-transform: uppercase;
+ padding: 15px;
+ text-align: center;
+}
+
 .form-box {
 width: fit-content;
     padding-top: 10px;
     padding: 10px;
 }
 
-.form-input {
-    width: fit-content;
-    margin-left: 70px
-}
-
 .form-icon {
     width:auto;
+}
+
+.form-input {
+    margin-left: 100px;
+    width: fit-content;
+    padding-left: 10px;
 }
 
 /* edit form stylings */
 .edit-input {
     margin-left: 100px;
     width: fit-content;
+    padding-left: 10px;
 }

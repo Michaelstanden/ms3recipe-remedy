@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
 {% block content %}
-<h1 class="recipe-text">Add your own recipes here.<br>
+<h1 class="edit-header">Add your own recipes here.<br>
 Simply fill out the form below to add your own recipes to the site.<br>
 Sharing is caring and a great way to build up the recipe remedy culture.</h1>
 
@@ -48,7 +48,7 @@ Sharing is caring and a great way to build up the recipe remedy culture.</h1>
         <div class="input-field col s12">
         <i class="material-icons prefix">account_circle</i>
           <input id="servings" name="servings" type = "int" class="validate form-box" required>
-          <label for="servings form-input">Serves How many people?</label>
+          <label for="servings" class="form-input">Serves How many people?</label>
         </div>
       </div>
       <div class="row">
@@ -66,16 +66,17 @@ Sharing is caring and a great way to build up the recipe remedy culture.</h1>
         </div>
       </div>
       <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix form-icon">today</i>
-                <input id="posted_date" name="posted_date" type="text" class="datepicker form-box" placeholder="datepicker" required>   
+            <div class="input-field col s12 ">
+                <i class="material-icons prefix">today</i>
+                <input id="posted_date" name="posted_date" type="text" class="datepicker" required> 
+                <label for="datepicker" class="form-input">Date</label>  
             </div>
             </div>
          <div class="row">
         <div class="input-field col s12">
         <i class="material-icons prefix">insert_link</i>
           <input id="image_url" name="image_url" type="text" class="validate">
-          <label for="image_url">Image of recipe</label>
+          <label for="image_url" class="form-input">Image of recipe</label>
         </div>
       </div>
 
