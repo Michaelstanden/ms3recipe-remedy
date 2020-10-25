@@ -140,5 +140,9 @@ width: fit-content;
 .edit-input {
     margin-left: 100px;
     width: fit-content;
-    padding-left: 10px;
+    padding-left: 50px;
+}
+
+.text-area {
+    margin-left:100px;
 }
