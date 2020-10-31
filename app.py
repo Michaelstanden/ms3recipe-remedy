@@ -90,10 +90,27 @@ def delete_recipe(recipe_id):
     mongo.db.recipe.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('recipe'))
 
-#contact us render
-@app.route('/contact_us')
-def contact_us():
-    return render_template('contact.html')
+#log in render
+@app.route('/log_in')
+def log_in():
+    return render_template('login.html')
+
+
+@app.route('/log_out')
+def log_out():
+    return render_template('logout.html')
+
+
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
+
 
 #function to show recipes in full
 @app.route('/full_recipe/<recipe_id>')
