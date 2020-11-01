@@ -17,7 +17,7 @@
   <nav>
                 <div class="nav-wrapper nav-extended navigation">
                     <a href="{{ url_for('index') }}" class="brand-logo ml-4 mt-2"><h2>Recipe Remedy</h2></a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down mr-3" id="navigation">
                         <li><a href="{{ url_for('index') }}">Home</a></li>
                         <li><a href="{{ url_for('recipe') }}">All recipes</a></li>
@@ -31,6 +31,7 @@
             </nav>
 
             <ul class="sidenav" id="mobile-demo">
+                <li><h4 class="center-align light-blue-text text-darken 4">Recipe Remedy</h4></li>
                 <li><a href="{{ url_for('index') }}">Home</a></li>
                 <li><a href="{{ url_for('recipe') }}">All recipes</a></li>
                 <li><a href="{{ url_for('add_recipe') }}">Add recipe</a></li>
