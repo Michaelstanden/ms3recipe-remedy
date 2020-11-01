@@ -1,6 +1,7 @@
 import os 
 import flask_pymongo
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, flash, \
+      redirect, request, session
 from flask_pymongo import PyMongo
 import math
 from bson.objectid import ObjectId
@@ -14,6 +15,7 @@ SECRET_KEY = os.environ.get('MONGO_URI')
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'Recipe'
 app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
+app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
@@ -70,11 +72,13 @@ def edit_recipe(recipe_id):
         return render_template('edit_recipe.html', recipe=the_recipe,
                            recipes=all_recipes)
 
+
 #deletes a recipe from the datbase and the screen
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     mongo.db.recipe.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('recipe'))
+
 
 #log in render
 @app.route('/log_in')
@@ -94,7 +98,28 @@ def profile():
 
 @app.route('/register', methods=["GET", "POST"])
 def register():
-    return render_template('register.html')
+     if request.method == "POST":
+        # Check username exists
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+            # makes username in lowercase to identify easier in system
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+
+        new_user = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(new_user)
+
+        # Put user into a session cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful! You can now share your own recipes!")
+        return redirect(url_for("home", username=session["user"]))
+    
+     return render_template("register.html")         
 
 
 
