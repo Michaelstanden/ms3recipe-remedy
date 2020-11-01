@@ -4,6 +4,7 @@ from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 import math
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 from os import path
 if path.exists("env.py"):
     import env
@@ -25,21 +26,6 @@ mongo.db.recipe.create_index([('recipe_name', 'text')])
 def index():
     return render_template('index.html')
 
-
-@app.route('/breakfast')
-def breakfast():
-    return render_template('breakfast.html')
-    
-
-
-@app.route('/lunch')
-def lunch():
-    return render_template('lunch.html')
-
-
-@app.route('/dessert')
-def dessert():
-    return render_template('dessert.html')
 
 
 @app.route('/recipe')
@@ -106,7 +92,7 @@ def profile():
     return render_template('profile.html')
 
 
-@app.route('/register')
+@app.route('/register', methods=["GET", "POST"])
 def register():
     return render_template('register.html')
 
