@@ -161,4 +161,6 @@ width: fit-content;
     padding: 20px;
     font-size: 2em;
     font-family: 'Playfair Display';
+    background:url(../images/rr-landing-img.jpg);
+    color: #ffffff;
 }
