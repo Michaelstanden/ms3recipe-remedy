@@ -44,12 +44,14 @@ border-radius: 10px;
 padding:5px;
 margin: 30px;
 font-family: 'Playfair Display', serif;
+border: 2px solid #ffffff;
 }
 
 .btn-display {
     display: flex;
     justify-content: center;
 }
+
 
 .navigation {
 background-color: #4fc9b8;
