@@ -81,7 +81,30 @@ def delete_recipe(recipe_id):
 #log in render
 @app.route('/log_in', methods=["GET", "POST"])
 def log_in():
-    return render_template('login.html')
+    if request.method == "POST":
+        # check if username in the database exists
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            # check to see if the password matches
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome, {}".format(request.form.get("username")))
+            else:
+                # incorrect password
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("log_in"))
+
+        else:
+            # username doesn't exist
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("log_in"))
+
+    return render_template("login.html")
+
+
 
 
 @app.route('/log_out')
