@@ -10,7 +10,6 @@ if path.exists("env.py"):
     import env
 
 
-SECRET_KEY = os.environ.get('MONGO_URI')
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'Recipe'
 app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
