@@ -160,7 +160,19 @@ width: fit-content;
 .register-heading {
     padding: 20px;
     font-size: 2em;
-    font-family: 'Playfair Display';
+    font-family: 'Playfair Display', sans-serif;
     background:url(../images/rr-landing-img.jpg);
     color: #ffffff;
+}
+
+.flash {
+    line-height: 3;
+    margin: auto;
+    font-family: 'Playfair Display', sans-serif;
+    color: #ffffff;
+    border: 2px solid #000000;
+}
+
+.flash-space {
+    padding-top: 20px;
 }
