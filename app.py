@@ -79,7 +79,7 @@ def delete_recipe(recipe_id):
 
 
 #log in render
-@app.route('/log_in')
+@app.route('/log_in', methods=["GET", "POST"])
 def log_in():
     return render_template('login.html')
 
