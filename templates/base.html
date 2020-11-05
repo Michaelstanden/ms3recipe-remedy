@@ -24,7 +24,7 @@
                         <li><a href="{{ url_for('add_recipe') }}">Add recipe</a></li>
                         <li class=""><a href="{{ url_for('log_in') }}">Log In</a></li>
                         <li class=""><a href="{{ url_for('log_out') }}">Log Out</a></li>
-                        <li class=""><a href="{{ url_for('profile') }}">Profile</a></li>
+                        <li class=""><a href="{{ url_for('profile' ,username=session['user']) }}">Profile</a></li>
                         <li class=""><a href="{{ url_for('register') }}">Register</a></li>
                     </ul>
                 </div>
@@ -37,7 +37,7 @@
                 <li><a href="{{ url_for('add_recipe') }}">Add recipe</a></li>
                 <li class=""><a href="{{ url_for('log_in') }}">Log In</a></li>
                 <li class=""><a href="{{ url_for('log_out') }}">Log Out</a></li>
-                <li class=""><a href="{{ url_for('profile') }}">Profile</a></li>
+                <li class=""><a href="{{ url_for('profile' ,username=session['user']) }}">Profile</a></li>
                 <li class=""><a href="{{ url_for('register') }}">Register</a></li>
             </ul>
 </header>
