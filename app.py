@@ -91,7 +91,7 @@ def log_in():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
+                        flash("Welcome Back, {} !".format(
                             request.form.get("username")))
                         return redirect(url_for(
                             "profile", username=session["user"]))
@@ -112,15 +112,22 @@ def log_in():
 
 @app.route('/log_out')
 def log_out():
-    return render_template('logout.html')
+    # remove user from session cookie
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("log_in"))
 
 
 @app.route('/profile/<username>', methods=["GET", "POST"])
 def profile(username):
-     # grab the session user's username from db
+    # grab the session user's username from mongodb
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("profile.html", username=username)
+
+    if session["user"]:
+        return render_template("profile.html", username=username)
+
+    return redirect(url_for("login"))
 
 
 @app.route('/register', methods=["GET", "POST"])

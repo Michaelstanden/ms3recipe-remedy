@@ -176,3 +176,12 @@ width: fit-content;
 .flash-space {
     padding-top: 20px;
 }
+
+.profile-head {
+    text-align:center;
+    padding:50px;
+}
+
+.profile-link {
+    text-align: center;
+}
