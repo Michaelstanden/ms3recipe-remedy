@@ -1,5 +1,12 @@
 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+Recipe Remedy a recipe website where users can sign up and login to create and upload their own recipes, as well as delete or edit their existing recipes.
+Website is built by using the CRUD philosophy
+This is a work in progress for a fullstack database website using flask, jinja templating, Heroku deployment and materialize frameworks. 
+I have also used html, css, javascript JQuery and Python for other languages.
 
+A live link to the heroku deployment is <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a>
+
+I have implemented a session cookies login that recognises the user.
 Welcome Michaelstanden,
 
 This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
