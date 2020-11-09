@@ -185,3 +185,20 @@ width: fit-content;
 .profile-link {
     text-align: center;
 }
+
+
+/* recipe card stylings */
+.recipe-image {
+    padding-top: 20px;
+}
+
+
+/* mobile nav stylings */
+.mobile-nav {
+    font-family: 'Playfair Display', serif;
+}
+
+.mobile-content {
+    background-color: #4fc9b8;
+    color:#ffffff;
+}

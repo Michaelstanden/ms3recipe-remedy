@@ -7,9 +7,9 @@
         <div class="row no-gutters">
             <div class="col-md-4 card-img">
                 {% if recipe.image_url %}
-                            <img src="{{recipe.image_url}}" class="rounded" alt="Image of Recipe outcome" />
+                            <img src="{{recipe.image_url}}" class="rounded recipe-image" alt="Image of Recipe outcome" />
                             {% else %}
-                            <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded" alt="Defualt image of smiling cartoon chef" />
+                            <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded recipe-image" alt="Defualt image of smiling cartoon chef" />
                             {% endif %}
             </div>
             <div class="col-md-8">
