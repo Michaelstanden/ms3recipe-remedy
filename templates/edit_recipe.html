@@ -11,14 +11,14 @@ Simply fill out the form below to edit recipes to the site..</h1>
     <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">restaurant</i>
-          <input id="cuisine_type" name="cuisine_type" type="text" class="validate form-box" value="{{recipe.cuisine_type}}" required>
+          <textarea id="textarea1" name="cuisine_type" type="text" class="materialize-textarea validate form-box" value="{{recipe.cuisine_type}}" required> </textarea> 
           <label for="recipe">Cuisine Type (e.g Asian, African)</label>
         </div>
        </div>
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">create</i>
-          <input id="recipe_name" name="recipe_name" type="text" class="validate form-box" value="{{recipe.recipe_name}}" required>
+          <textarea id="textarea2" name="cuisine_type" type="text" class="materialize-textarea validate form-box" value="{{recipe.recipe_name}}" required> </textarea> 
           <label for="recipe_name">Recipe Name</label>
          
         </div>
@@ -26,38 +26,37 @@ Simply fill out the form below to edit recipes to the site..</h1>
        <div class="row">
         <div class="input-field col s12">
         <i class="material-icons prefix">create</i>
-        <input id="recipe_description" name="recipe_description" type="text" class="validate form-box" value="{{recipe.recipe_description}}" required>
-          <label for="textarea1" class="">Recipe Description</label>
+        <textarea id="textarea3" name="cuisine_type" type="text" class="materialize-textarea validate form-box" value="{{recipe.recipe_description}}" required> </textarea> 
+          <label for="textarea3" class="">Recipe Description</label>
 
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
         <i class="material-icons prefix">timelapse</i>
-          <input id="prep_time" name="prep_time" type="int" class="validate prep_time form-box" value="{{recipe.prep_time}}" required>
+          <textarea id="textarea4" name="cuisine_type" type="text" class="materialize-textarea validate form-box" value="{{recipe.prep_time}}" required> </textarea> 
           <label for="prep_time" class="edit-input">Prep Time (minutes) </label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
         <i class="material-icons prefix">schedule</i>
-          <input id="cooking_time" name="cooking_time" type="int" class="validate form-box" value="{{recipe.cooking_time}}" required>
+         <textarea id="textarea5" name="cuisine_type" type="text" class="materialize-textarea validate form-box" value="{{recipe.cooking_time}}" required> </textarea> 
           <label for="cooking_time" class="edit-input">Cooking Time (minutes) </label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
         <i class="material-icons prefix">account_circle</i>
-          <input id="servings" name="servings" type = "int" class="validate form-box" value="{{recipe.servings}}" required>
+          <textarea id="textarea6" name="cuisine_type" type="text" class="materialize-textarea validate form-box" value="{{recipe.servings}}" required> </textarea> 
           <label for="servings" class="edit-input">Serves How many people?</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">kitchen</i>
-          <textarea id="textarea2" name="ingredients" class="materialize-textarea form-box" required></textarea>
-          {{recipe.ingredients}}
-          <label for="textarea2">Ingredients</label>
+          <textarea id="textarea7" name="ingredients" class="materialize-textarea validate form-box" required> </textarea>
+          <label for="textarea7">Ingredients</label>
           <span class="helper-text"
           >Add each ingredient of the recipe on a new line.</span>
         </div>
@@ -65,9 +64,8 @@ Simply fill out the form below to edit recipes to the site..</h1>
       <div class="row">
         <div class="input-field col s12">
         <i class="material-icons prefix">sort</i>
-          <textarea id="textarea3" name="method" class="materialize-textarea form-box" required></textarea>
-          {{recipe.method}}
-          <label for="textarea4">How to Cook this recipe</label>
+          <textarea id="textarea8" name="method" class="materialize-textarea validate form-box" required> </textarea>
+          <label for="textarea8">How to Cook this recipe</label>
           <span class="helper-text"
           >Add each step of the recipe on a new line.</span>
         </div>

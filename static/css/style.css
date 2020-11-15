@@ -122,6 +122,9 @@ font-family: 'Playfair Display', serif;
  text-transform: uppercase;
  padding: 15px;
  text-align: center;
+margin: auto;
+border: 2px solid #000000;
+margin-top:20px;
 }
 
 .form-box {
@@ -141,11 +144,6 @@ width: fit-content;
 }
 
 /* edit form stylings */
-.edit-input {
-    margin-left: 100px;
-    width: fit-content;
-    padding-left: 50px;
-}
 
 .text-area {
     margin-left:100px;
@@ -171,6 +169,7 @@ width: fit-content;
     font-family: 'Playfair Display', sans-serif;
     color: #ffffff;
     border: 2px solid #000000;
+    padding: 10px;
 }
 
 .flash-space {
