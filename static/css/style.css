@@ -185,10 +185,22 @@ width: fit-content;
     text-align: center;
 }
 
-.info-text {
-    border:#000000 2px solid;
-    background-color:#76fcb2;
-    color: #ffffff;
+.generic-text {
+    border: 2px solid #000000;
+    background-color: #30e7c0;
+    width: fit-content;
+    padding:10px;
+    margin: auto;
+    font-family: 'Playfair Display', sans-serif;
+    color:#ffffff;
+    margin-left:10px;
+    margin-right:10px;
+    text-align:center;
+}
+
+.link-text {
+    text-align:center;
+    padding-bottom:20px;
 }
 
 
