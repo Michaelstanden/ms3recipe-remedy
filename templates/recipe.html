@@ -22,18 +22,23 @@
                     <h6 class="card-title recipe-text"><i class="material-icons prefix">schedule</i>Servings <br>{{recipe.servings}}</h6>
                         <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="mr-3 text-decoration-none btn action-btn">
                                 Full recipe
-                                <i class="material-icons right">send</i>
+                                <i class="material-icons right">send</i>      
                         </a>
+                        {% if session.user|lower == recipe.created_by|lower %}
                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="mr-3 text-decoration-none btn action-btn">
                                 Edit Recipe
                                 <i class="material-icons right">mode_edit</i>
                         </a>
+                        {% endif %}
                         <!--DELETE BUTTON-->
+                        {% if session.user|lower == recipe.created_by|lower %}
                         <button class="waves-effect waves-light btn action-btn" type="button" name="action" data-toggle="modal" data-target="#staticBackdrop">
                             Delete Recipe
                             <i class="material-icons right">delete</i>
+                        {% endif %}    
                         </button>
-                <!--DELET BUTTON MODAL-->
+                <!--DELETE BUTTON MODAL-->
+                
                 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
@@ -53,6 +58,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                 </div>
             </div>                        
         </div>
