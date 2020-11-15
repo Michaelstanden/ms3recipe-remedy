@@ -77,13 +77,19 @@
                             <h4 class="border-bottom recipe-text">Cooking Time (Min)</h4>
                             <p class="recipe-p-text">{{recipe.cooking_time}}</p>
                             <h4 class=" border-bottom recipe-text">Ingredients</h4>
-                            <p class="recipe-p-text">{{recipe.ingredients}}</p>
+                              {% for ingredients in recipe.ingredients.splitlines() %}
+                                <p class="recipe-p-text">{{ ingredients }}</p>
+                              {% endfor %}
                             <h4 class=" border-bottom recipe-text">Date Posted</h4>
                             <p class="recipe-p-text">{{recipe.posted_date}}</p>
                             <h4 class=" border-bottom recipe-text">Servings</h4>
                             <p class="recipe-p-text">{{recipe.servings}}</p> 
                             <h4 class="border-bottom recipe-text">Cooking method</h4>
-                            <p class="recipe-p-text">{{recipe.method}}</p>
+                            <h2>Method</h2>
+                             {% for method in recipe.method.splitlines() %}
+                              <p class="recipe-p-text">{{ method }}</p>
+                             {% endfor %}
+                        
                         </div>
                     </div>
                 </div>
