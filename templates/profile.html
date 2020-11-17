@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="container-fluid hero-image landing-page">
 <div class="col s12 profile-head">
-<h3 class="generic-text">Welcome, now you are free to create, edit and delete any recipes you create.<br>
-Have fun, share your recipes and browse the site for some inspiration. </h3>
+<h3 class="generic-text">You are free to create, edit and delete any recipes you add to Recipe Remedy.<br>
+Have fun, share your recipes and browse the site to see what other users have added for some inspiration. </h3>
 </div>
 
 <div class=" col s12 link-text">
 <a href="{{ url_for('index') }}" class="generic-text"> Explore</a>
+</div>
 </div>
 {% endblock %}

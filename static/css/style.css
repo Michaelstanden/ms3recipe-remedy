@@ -209,3 +209,11 @@ width: fit-content;
     background-color: #4fc9b8;
     color:#ffffff;
 }
+
+/*footer social-media */
+
+.social-media {
+    margin: auto;
+    font-size: 2em;
+
+}
