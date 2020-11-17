@@ -116,16 +116,6 @@ font-family: 'Playfair Display', serif;
  margin: 50px;
 }
 
-.edit-header {
- font-family: 'Playfair Display' , serif;
- font-size: 2em;
- text-transform: uppercase;
- padding: 15px;
- text-align: center;
-margin: auto;
-border: 2px solid #000000;
-margin-top:20px;
-}
 
 .form-box {
 width: fit-content;
@@ -190,12 +180,12 @@ width: fit-content;
     background-color: #30e7c0;
     width: fit-content;
     padding:10px;
-    margin: auto;
     font-family: 'Playfair Display', sans-serif;
     color:#ffffff;
     margin-left:10px;
     margin-right:10px;
     text-align:center;
+    margin:auto;
 }
 
 .link-text {
