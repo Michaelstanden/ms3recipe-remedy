@@ -11,8 +11,11 @@
                 How do we know its the best? Because you created it!<br>
                 From quick meals to fit a busy day, hearty meals for family sit down, pushing your culinary skills, or simply come to browse for inspiration.</h2>
                 <div class="btns btn-display browser-default">
+                
                 <a href="{{ url_for('recipe') }}" class="btn-info landing-btn text-decoration-none btn-links">All Recipes</a>
-				<a href="{{ url_for('add_recipe') }}" class="btn-info landing-btn text-decoration-none btn-links">Add Your Own!</a>
+				{% if session.user|lower == recipe.created_by|lower %}
+                <a href="{{ url_for('add_recipe') }}" class="btn-info landing-btn text-decoration-none btn-links">Add Your Own!</a>
+                {% endif %}
                 </div>
 			</div>
 		</div>
