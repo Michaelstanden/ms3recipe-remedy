@@ -19,6 +19,7 @@
                     <h6 class="card-title recipe-text">Prep Time <br><i class="material-icons prefix">schedule</i>{{recipe.prep_time}} </h6>
                     <h6 class="card-title recipe-text">Cooking Time <br><i class="material-icons prefix">schedule</i>{{recipe.cooking_time}} </h6>
                     <h6 class="card-title recipe-text">Date Posted <br><i class="material-icons prefix">today</i>{{recipe.posted_date}}</h6>
+                    <h6 class="card-title recipe-text">Created By <br><i class="material-icons prefix">account_circle</i>{{recipe.users}}</h6>
                     <div class="row justify-content-sm-center justify-content-md-end action-btns">
                      {% if session.user|lower == recipe.created_by|lower %}
                         <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="mr-3 text-decoration-none waves-effect waves-light btn action-btn">
