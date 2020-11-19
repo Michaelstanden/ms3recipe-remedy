@@ -62,6 +62,7 @@ def edit_recipe(recipe_id):
             'posted_date': request.form.get('posted_date'),
             'method': request.form.get('method'),
             'image_url': request.form.get('image_url'),
+            'created_by': request.form.get('created_by')
             })
         return redirect(url_for('recipe'))
     else:

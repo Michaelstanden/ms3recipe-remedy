@@ -13,9 +13,9 @@
                 <div class="btns btn-display browser-default">
                 
                 <a href="{{ url_for('recipe') }}" class="btn-info landing-btn text-decoration-none btn-links">All Recipes</a>
-			
+			 {% if session.user %}
                 <a href="{{ url_for('add_recipe') }}" class="btn-info landing-btn text-decoration-none btn-links">Add Your Own!</a>
-                
+             {% endif %}   
                 </div>
 			</div>
 		</div>

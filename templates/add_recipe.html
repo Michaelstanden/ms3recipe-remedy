@@ -73,7 +73,7 @@ Sharing is caring and a great way to build up the recipe remedy culture.</h1>
       <div class="row">
         <div class="input-field col s12">
         <i class="material-icons prefix">account_circle</i>
-          <input id="created_by" name="created_by" type="text" class="validate">
+          <input id="created_by" name="created_by" type="text" class="validate" readonly value="{{ session.user }}">
           <label for="created_by" class="form-input">Created By</label>
           <span class="helper-text"
           >Add Your username in here so we can recognise you.</span>
