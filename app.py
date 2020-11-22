@@ -41,6 +41,7 @@ def add_recipe():
     if request.method == 'POST':
         recipe = mongo.db.recipe
         recipe.insert_one(request.form.to_dict())
+        flash("Recipe Successfully Added")
         return redirect(url_for('add_recipe'))
     return render_template('add_recipe.html',
                            recipe=mongo.db.recipe.find())
@@ -64,6 +65,7 @@ def edit_recipe(recipe_id):
             'image_url': request.form.get('image_url'),
             'created_by': request.form.get('created_by')
             })
+        flash("Recipe Successfully Edited")
         return redirect(url_for('recipe'))
     else:
         the_recipe = mongo.db.recipe.find_one({'_id': ObjectId(recipe_id)})
@@ -157,12 +159,45 @@ def register():
      return render_template("register.html")         
 
 
-
 #function to show recipes in full
 @app.route('/full_recipe/<recipe_id>')
 def full_recipe(recipe_id):
     the_recipe = mongo.db.recipe.find_one({'_id': ObjectId(recipe_id)})
     return render_template('full_recipe.html', recipe=the_recipe)
+
+
+# Search for a recipe
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    search = request.form["search"]
+    print(search)
+    recipe = mongo.db.recipe.find({"recipe_name":
+                                   {"$regex": search, '$options': 'i'}})
+    recipesName = mongo.db.recipe.find({"recipe_name":
+                                       {"$regex": search,
+                                        '$options': 'i'}}).count()
+    print(recipesName)
+    ingredients = mongo.db.recipe.find({"recipe_ingredients":
+                                        {"$regex": search,
+                                         '$options': 'i'}})
+    ingredientsName = mongo.db.recipe.find({"recipe_ingredients":
+                                           {"$regex": search,
+                                            '$options': 'i'}}).count()
+    print(ingredientsName)
+    return render_template("search_results.html",
+                           recipe=recipe,
+                           ingredients=ingredients,
+                           recipesName=recipesName,
+                           ingredientsName=ingredientsName)
+
+
+# View searched recipe result
+@app.route("/view_search_result/<recipe_id>", methods=['GET'])
+def view_search_result(recipe_id):
+    recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    ingredients = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("recipe.html",
+                           recipe=recipe, ingredients=ingredients)
 
 
 if __name__ == '__main__':
