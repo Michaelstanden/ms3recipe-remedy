@@ -113,6 +113,7 @@ font-family: 'Playfair Display', serif;
     text-decoration: underline;
 }
 
+
 /*add recipe stylings*/ 
 .info-text {
  font-family: 'Playfair Display', sans-serif;
@@ -222,5 +223,9 @@ width: fit-content;
 .social-media {
     margin: auto;
     font-size: 2em;
+}
 
+/*search bar*/
+.search-bar {
+    display: flex;
 }

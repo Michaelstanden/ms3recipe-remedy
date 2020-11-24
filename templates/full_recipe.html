@@ -70,13 +70,14 @@
             </div>
             <div class="col-md-12 description mt-3">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="text-center">
-                         {% if recipe.image_url %}
+                    <div class="row col card-img">
+                    {% if recipe.image_url %}
                             <img src="{{recipe.image_url}}" class="rounded" alt="Image of Recipe outcome" />
                             {% else %}
                             <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded" alt="Defualt image of smiling cartoon chef" />
                             {% endif %}
+                     </div>       
+                        <div class="col md-9 text-center">
                             <p></p>
                             <h4 class=" border-bottom recipe-text">Description</h4>
                             <p class="recipe-p-text">{{recipe.recipe_description}}</p>
@@ -107,5 +108,5 @@
             </div>
         </div>
     </div>
-</div>
+
 {% endblock %}
