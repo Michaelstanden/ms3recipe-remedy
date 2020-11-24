@@ -177,14 +177,14 @@ def search():
                                        {"$regex": search,
                                         '$options': 'i'}}).count()
     print(recipesName)
-    ingredients = mongo.db.recipe.find({"recipe_ingredients":
+    ingredients = mongo.db.recipe.find({"ingredients":
                                         {"$regex": search,
                                          '$options': 'i'}})
-    ingredientsName = mongo.db.recipe.find({"recipe_ingredients":
+    ingredientsName = mongo.db.recipe.find({"ingredients":
                                            {"$regex": search,
                                             '$options': 'i'}}).count()
     print(ingredientsName)
-    return render_template("search_results.html",
+    return render_template("search.html",
                            recipe=recipe,
                            ingredients=ingredients,
                            recipesName=recipesName,
@@ -196,7 +196,7 @@ def search():
 def view_search_result(recipe_id):
     recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     ingredients = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("recipe.html",
+    return render_template("full_recipe.html",
                            recipe=recipe, ingredients=ingredients)
 
 

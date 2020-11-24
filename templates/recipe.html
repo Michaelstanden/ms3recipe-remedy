@@ -1,6 +1,33 @@
 {% extends 'base.html'%}
 {% block content %}
 <h3 class="center-align register-heading">Recipes</h3>
+<section class="container">
+  <div class="row center-align">
+    <div class="col s12 m6 find_recipe_col">
+      <h1 class="info-text">Find a Recipe</h1>
+      <form method="POST" action="search">
+        <div class="input-field col s12">
+          <input
+            id="search"
+            name="search"
+            type="text"
+            class="validate"
+            required
+          />
+          <i class="material-icons">search</i>
+          <label for="search">E.g: 'Flour' or 'Risotto'</label>
+          <button
+            id="search-button"
+            type="submit"
+            class="col s12 btn-large red lighten-2"
+          >
+            Search
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 {% for recipe in recipes %}
 <!--RECIPE CARDS(snippet of the recipe, full description in breakfast, dinner, dessert.html pages)-->
 <div class="container">
