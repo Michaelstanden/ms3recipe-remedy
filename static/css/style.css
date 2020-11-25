@@ -226,6 +226,12 @@ a {
     font-size: 2em;
 }
 
-/*search bar*/
+/*search results and bar*/
 .search-bar {
+}
+
+.search-card {
+  padding:20px;
+  line-height: 1.6;
+  border: 2px #000000 solid;
 }

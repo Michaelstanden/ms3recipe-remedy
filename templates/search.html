@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
 {% block content %}
-<section class="container">
+<section class="container info-text">
   <div class="row center-align">
     <div class="col s12 m6 find_recipe_col">
       <h1>Search Results</h1>
@@ -14,11 +14,11 @@
 </section>
 
 <!-- Results List -->
-<section class="container">
+<section class="card mb-3 recipe-card">
   <ul class="">
     {% for recipe in recipe %}
     <li>
-      <div class="row collapsible-header white-text red lighten-3">
+      <div class="row collapsible-header">
         <div class="col s12 m3">
           <img
             class="responsive-img"
@@ -27,12 +27,13 @@
           />
         </div>
         <div class="col s12 m7">
-          <h5><i class="fas fa-utensils"></i>{{ recipe.recipe_name }}</h5>
-          {{ recipe.category }}
-          <p><em>by: {{ recipe.created_by }}</em></p>
-          <p><em>by: {{ recipe.posted_date }}</em></p>
+          <h5><i class="material-icons">local_dining</i>{{ recipe.recipe_name }}</h5>
+          {{ recipe.cuisine_type }}
+          <p><em>Description: {{ recipe.recipe_description }}</em></p>
+          <p><em>By: {{ recipe.created_by }}</em></p>
+          <p><em>Date: {{ recipe.posted_date }}</em></p>
         </div>
-        <div class="col s12 m2 recipe-buttons not-collapse left-align">
+        <div class="col s12 m2 left-align btn-links">
           <a
             href="{{ url_for('view_search_result', recipe_id=recipe._id) }}"
             class="waves-effect waves-light btn search-result-view-btn view-btn red lighten-5"
