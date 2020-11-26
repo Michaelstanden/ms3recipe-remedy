@@ -200,7 +200,11 @@ width: fit-content;
 }
 
 a {
-    color:#ffffff;
+    color:#000000;
+}
+
+a:hover {
+    color: #ffffff;
 }
 
 /* recipe card stylings */
@@ -227,8 +231,6 @@ a {
 }
 
 /*search results and bar*/
-.search-bar {
-}
 
 .search-card {
   padding:20px;
