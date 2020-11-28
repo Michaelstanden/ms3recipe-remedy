@@ -1,12 +1,13 @@
 {% extends 'base.html'%}
 {% block content %}
 <h3 class="center-align register-heading">Recipes</h3>
-<section class="container">
+<section class="container search-bar">
   <div class="row center-align">
-    <div class="col s12 m6 find_recipe_col">
+    <div class="col s12 m6">
       <h1 class="info-text">Find a Recipe</h1>
+      <i class="material-icons">search</i>
       <form method="POST" action="search">
-        <div class="input-field col s12 search-bar">
+        <div class="col s12">
           <input
             id="search"
             name="search"
@@ -14,7 +15,7 @@
             class="validate"
             required
           />
-          <i class="material-icons">search</i>
+
           <label for="search">E.g: 'Flour' or 'Risotto'</label>
           <button
             id="search-button"

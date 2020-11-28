@@ -76,6 +76,8 @@ font-family: 'Playfair Display', serif;
     border: 5px solid;
     padding: 15px;
     margin-top: 50px;
+    margin-left:20px;
+    margin-right:20px;
 }
 
 .recipe-text {
@@ -113,6 +115,10 @@ font-family: 'Playfair Display', serif;
     text-decoration: underline;
 }
 
+.card-images {
+    width: 90%;
+}
+
 
 /*add recipe stylings*/ 
 .info-text {
@@ -120,7 +126,8 @@ font-family: 'Playfair Display', serif;
  font-size: 2em;
  text-transform: uppercase;
  padding: 15px;
- margin: 50px;
+ margin: auto;
+ margin-top:20px;
 }
 
 
@@ -236,4 +243,10 @@ a:hover {
   padding:20px;
   line-height: 1.6;
   border: 2px #000000 solid;
+}
+
+.search-bar {
+  margin: auto;
+  width: fit-content;
+  font-family:  
 }
