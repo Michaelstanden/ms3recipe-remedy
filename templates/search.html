@@ -85,12 +85,14 @@
           class="waves-effect waves-light btn view-btn search-btn"
           >Find A Recipe</a
         >
+        {% if session.user %}
         <p> Or Maybe add your own? </p>
         <a
           href="{{ url_for('add_recipe') }}"
           class="waves-effect waves-light btn view-btn search-btn"
           >Add your own Recipe</a
         >
+        {% endif %}
       </div>
     </div>
   </section>

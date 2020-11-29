@@ -23,6 +23,7 @@ background: linear-gradient(to left, rgb(255, 255, 255, 0)0%, rgba(25, 25, 25, 0
 padding: 20px;
 margin: 10px;
 line-height: 1.6;
+text-align:center;
 font-family: 'Open Sans', sans-serif;
 color: #ffffff;
 background: linear-gradient(to left, rgb(255, 255, 255, 0)0%, rgba(25, 25, 25, 0.8) 5%, rgba(25, 25, 25, 0.8) 95%, rgb(255, 255, 255, 0) 100%);
