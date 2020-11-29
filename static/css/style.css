@@ -4,7 +4,7 @@
 
 
 body {
-background-color:rgb(253, 248, 180);
+background-color:rgb(176, 234, 252);
 text-transform: uppercase;
 }
 
@@ -129,6 +129,10 @@ font-family: 'Playfair Display', serif;
  padding: 15px;
  margin: auto;
  margin-top:20px;
+}
+
+.color-correction {
+    background-color: white;
 }
 
 
@@ -269,6 +273,7 @@ a:hover {
     border: 2px solid #000000;
     border-radius: 10px;
 }
+
 
 /* media queries */
 

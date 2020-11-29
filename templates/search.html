@@ -20,11 +20,11 @@
     <li>
       <div class="row collapsible-header">
         <div class="col s12 m6">
-          <img
-            class="responsive-img"
-            src="{{ recipe.image_url }}"
-            alt="image of {{ recipe.recipe_name }}"
-          />
+          {% if recipe.image_url %}
+                            <img src="{{recipe.image_url}}" class="rounded recipe-image" alt="Image of Recipe outcome" />
+                            {% else %}
+                            <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded recipe-image" alt="Defualt image of smiling cartoon chef" />
+                            {% endif %}
         </div>
         <div class="col s12 m7">
           <h5><i class="material-icons">local_dining</i>{{ recipe.recipe_name }}</h5>
@@ -47,11 +47,11 @@
     <li>
       <div class="row collapsible-header ">
         <div class=" col s12 m3">
-          <img
-            class="responsive-img"
-            src="{{ recipe.image_url }}"
-            alt="image of {{ recipe.recipe_name }}"
-          />
+          {% if recipe.image_url %}
+                            <img src="{{recipe.image_url}}" class="rounded recipe-image" alt="Image of Recipe outcome" />
+                            {% else %}
+                            <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded recipe-image" alt="Defualt image of smiling cartoon chef" />
+                            {% endif %}
         </div>
         <div class="col s12 m7">
           <h5><i class="material-icons">local_dining</i>{{ recipe.recipe_name }}</h5>
