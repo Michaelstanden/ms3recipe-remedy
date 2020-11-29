@@ -6,9 +6,9 @@
         <div class="row no-gutters mb-0">
             <div class="col-md-5 card-img">
                {% if recipe.image_url %}
-                            <img src="{{recipe.image_url}}" class="rounded card-images" alt="Image of Recipe outcome" />
+                            <img src="{{recipe.image_url}}" class="card-images rounded" alt="Image of Recipe outcome" />
                             {% else %}
-                            <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded" alt="Defualt image of smiling cartoon chef" />
+                            <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="card-images rounded" alt="Defualt image of smiling cartoon chef" />
                             {% endif %} 
             </div>
             
@@ -72,9 +72,9 @@
                 <div class="card-body">
                     <div class="row col ">
                     {% if recipe.image_url %}
-                            <img src="{{recipe.image_url}}" class="rounded card-images" alt="Image of Recipe outcome" />
+                            <img src="{{recipe.image_url}}" class="card-images rounded" alt="Image of Recipe outcome" />
                             {% else %}
-                            <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded" alt="Defualt image of smiling cartoon chef" />
+                            <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="card-images rounded" alt="Defualt image of smiling cartoon chef" />
                             {% endif %}
                      </div>       
                         <div class="col md-9 text-center">
