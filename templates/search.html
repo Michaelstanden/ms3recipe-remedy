@@ -36,7 +36,7 @@
         <div class="col s12 m2 left-align btn-links">
           <a
             href="{{ url_for('view_search_result', recipe_id=recipe._id) }}"
-            class="waves-effect waves-light btn search-result-view-btn view-btn"
+            class="waves-effect waves-light btn view-btn"
             >View Recipe</a
           >
         </div>
@@ -78,17 +78,17 @@
   <section class="container">
     <div class="row center-align">
       <div class="col s12 m6 find_recipe_col no_results">
-        <h2>Sorry, no recipes found!</h2>
-        <p>Want to search again?</p>
+        <h2 class="generic-text">Sorry, no recipes found!</h2>
+        <p >Want to search again?</p>
         <a
           href="{{ url_for('recipe') }}"
-          class="waves-effect waves-light btn search-result-view-btn view-btn red lighten-3"
+          class="waves-effect waves-light btn view-btn search-btn"
           >Find A Recipe</a
         >
         <p> Or Maybe add your own? </p>
         <a
           href="{{ url_for('add_recipe') }}"
-          class="waves-effect waves-light btn search-result-view-btn view-btn red lighten-3"
+          class="waves-effect waves-light btn view-btn search-btn"
           >Add your own Recipe</a
         >
       </div>
