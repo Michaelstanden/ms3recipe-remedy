@@ -3,10 +3,10 @@
 
 <!--LANDING PAGE-->
 <body>
-	<div class="container-fluid hero-image landing-page">
-		<div class="row">
-			<div class="col-sm-12">
-				<h1 class="landing-text title-heading">Recipe Remedy</h1>
+    <div class="container-fluid hero-image landing-page">
+        <div class="row">
+            <div class="col s12 m6">
+                <h1 class="landing-text title-heading">Recipe Remedy</h1>
                 <h2 class="landing-text mb-4 heading-description">Find recipes for any meal. At recipe Remedy we showcase the best in all types of cuisine.<br> 
                 How do we know its the best? Because you created it!<br>
                 <ul>
@@ -17,15 +17,32 @@
                 </ul>
                 <br>
                 Recipe remedy has it all</h2>
-                <div class="btns btn-display browser-default">
+                
+  <div class="row">
+    <div class="col s12">
+      <div class="card recipe-card">
+        <div class="card-content">
+          <span class="card-title recipe-text">Recipe Of the month</span>
+          <p class="recipe-p-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="{{ url_for('recipe') }}">View more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+                <div class="btns btn-display browser-default">           
                 
                 <a href="{{ url_for('recipe') }}" class="btn-info landing-btn text-decoration-none btn-links">All Recipes</a>
-			 {% if session.user %}
+             {% if session.user %}
                 <a href="{{ url_for('add_recipe') }}" class="btn-info landing-btn text-decoration-none btn-links">Add Your Own!</a>
              {% endif %}   
                 </div>
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
+    
 </body>
+
 {% endblock %}

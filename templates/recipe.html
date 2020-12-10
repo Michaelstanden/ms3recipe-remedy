@@ -32,6 +32,7 @@
 {% for recipe in recipes %}
 <!--RECIPE CARDS(snippet of the recipe, full description in breakfast, dinner, dessert.html pages)-->
 <div class="container">
+
     <div class="card mb-3 recipe-card">
         <div class="row no-gutters">
             <div class="col-md-4 card-img">
@@ -41,14 +42,13 @@
                             <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded recipe-image" alt="Defualt image of smiling cartoon chef" />
                             {% endif %}
             </div>
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div class="card-body">
                     <a href="{{ url_for('recipe', recipe_id=recipe._id) }}"><h4 class="recipe-text full-recipe-name">{{recipe.recipe_name}}</h4></a>
-                    <h5 class="card-title recipe-text">{{recipe.recipe_name}}</h5>
-                    <h6 class="card-title recipe-text"><i class="material-icons prefix">restaurant</i>Description<br> {{recipe.recipe_description}}</h6>
-                    <h6 class="card-title recipe-text"><i class="material-icons prefix">schedule</i>Prep Time (min)<br> {{recipe.prep_time}}</h6>
-                    <h6 class="card-title recipe-text"><i class="material-icons prefix">schedule</i>Cooking Time (min) <br>{{recipe.cooking_time}}</h6>
-                    <h6 class="card-title recipe-text"><i class="material-icons prefix">schedule</i>Servings <br>{{recipe.servings}}</h6>
+                    <h6 class="card-title recipe-text"><i class="material-icons prefix">restaurant</i>Description<br><p class="card-text"> {{recipe.recipe_description}}</p></h6>
+                    <h6 class="card-title recipe-text"><i class="material-icons prefix">schedule</i>Prep Time (min)<br><p class="card-text"> {{recipe.prep_time}}</p></h6>
+                    <h6 class="card-title recipe-text"><i class="material-icons prefix">schedule</i>Cooking Time (min) <br> <p class="card-text">{{recipe.cooking_time}}</p></h6>
+                    <h6 class="card-title recipe-text"><i class="material-icons prefix">schedule</i>Servings <br> <p class="card-text">{{recipe.servings}}</p></h6>
                         <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="mr-3 text-decoration-none btn action-btn">
                                 Full recipe
                                 <i class="material-icons right">send</i>      
@@ -93,5 +93,6 @@
         </div>
 </div>
 </div>
+
 {% endfor %}
 {% endblock %}

@@ -99,6 +99,14 @@ font-family: 'Playfair Display', serif;
  font-weight: 200;
 }
 
+.card-text {
+ font-family: 'Piazzolla', serif;
+ font-size: 1em;
+ text-transform: uppercase;
+ padding: 15px;
+ font-weight: 200;
+}
+
 .action-btn {
     border: solid 2px #000000;
     padding-bottom: 10px;
