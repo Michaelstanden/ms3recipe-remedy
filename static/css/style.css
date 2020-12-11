@@ -86,14 +86,14 @@ font-family: 'Playfair Display', serif;
 
 .recipe-text {
  font-family: 'Playfair Display' , serif;
- font-size: 2em;
+ font-size: 1.5em;
  text-transform: uppercase;
  padding: 15px;
 }
 
 .recipe-p-text {
  font-family: 'Piazzolla', serif;
- font-size: 2em;
+ font-size: 1.5em;
  text-transform: uppercase;
  padding: 15px;
  font-weight: 200;
@@ -312,6 +312,13 @@ a:hover {
   .modal {
       padding-right: 10px;
       padding-left: 10px;
+  }
+  .recipe-text {
+ font-family: 'Playfair Display' , serif;
+ font-size: 1.5em;
+ text-transform: uppercase;
+ padding: 0px;
+}
 }
 
 
