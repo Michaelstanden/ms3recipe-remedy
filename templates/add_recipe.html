@@ -17,18 +17,6 @@ Sharing is caring and a great way to build up the recipe remedy culture.</h1>
           <label for="recipe" class="form-input">Cuisine Type (e.g Asian, African)</label>
         </div>
        </div>
-<div class="row">
-      <div class="input-field col s12">
-        <i class="material-icnons prefix"></i>
-        <select id="category" name="category" class="validate">
-          <option value="" disabled selected>Select Meal Category</option>
-          {% for category in categories %}
-          <option value="{{ category.cuisine_type }}">
-              {{ category.cusine_type }}</option>
-          {% endfor %}
-        </select>
-      </div>
-    </div>
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">create</i>
