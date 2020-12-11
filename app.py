@@ -43,6 +43,8 @@ def add_recipe():
         recipe.insert_one(request.form.to_dict())
         flash("Recipe Successfully Added")
         return redirect(url_for('add_recipe'))
+    category= {"category": request.form.get("category") }    
+    categories = mongo.db.categories.find().sort("category", 1)
     return render_template('add_recipe.html',
                            recipe=mongo.db.recipe.find())
 
