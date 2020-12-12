@@ -348,8 +348,10 @@ Open Sans: Pairs nicely with Playfair when looking on googlefonts suggestions. I
 
 **Images:** All homepage images are google images. Images used within recipe submissions have been submitted via me and testers using URL links to external sources and are not owned by me or Recipe Remedy.
 
+**Recipes:** All recipes added by users, and myself Michael Standen.
 
-**Recipes:** All recipes added by users, and myself Michael Standen. 
+**Websites** There have been several websites crucial to my learning of this project they are:
+    
 
 
 ## Acknowledgements
