@@ -1,98 +1,108 @@
 {% extends 'base.html'%}
 {% block content %}
 <h3 class="center-align register-heading">Recipes</h3>
+<!-- Search Bar -->
 <section class="container search-bar">
-  <div class="row center-align">
-    <div class="col s12 m6">
-      <h1 class="info-text">Find a Recipe</h1>
-      <i class="material-icons">search</i>
-      <form method="POST" action="search">
-        <div class="col s12">
-          <input
-            id="search"
-            name="search"
-            type="text"
-            class="validate"
-            required
-          />
-
-          <label for="search">E.g: 'Flour' or 'Risotto'</label>
-          <button
-            id="search-button"
-            type="submit"
-            class="col s12 btn-large search-btn"
-          >
-            Search
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
+   <div class="row center-align">
+      <div class="col s12 m6">
+         <h1 class="info-text">Find a Recipe</h1>
+         <i class="material-icons">search</i>
+         <form method="POST" action="search">
+            <div class="col s12">
+               <input
+                  id="search"
+                  name="search"
+                  type="text"
+                  class="validate"
+                  required
+                  />
+               <label for="search">E.g: 'Flour' or 'Risotto'</label>
+               <button
+                  id="search-button"
+                  type="submit"
+                  class="col s12 btn-large search-btn"
+                  >
+               Search
+               </button>
+            </div>
+         </form>
+      </div>
+   </div>
 </section>
 {% for recipe in recipes %}
-<!--RECIPE CARDS(snippet of the recipe, full description in breakfast, dinner, dessert.html pages)-->
+<!--RECIPE CARDS(snippet of the recipe, full description in full recipe.html)-->
 <div class="container">
-
-    <div class="card mb-3 recipe-card">
-        <div class="row no-gutters">
-            <div class="col-md-4 card-img">
-                {% if recipe.image_url %}
-                            <img src="{{recipe.image_url}}" class="rounded recipe-image" alt="Image of Recipe outcome" />
-                            {% else %}
-                            <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded recipe-image" alt="Defualt image of smiling cartoon chef" />
-                            {% endif %}
-            </div>
-            <div class="col-md-6">
-                <div class="card-body">
-                    <a href="{{ url_for('recipe', recipe_id=recipe._id) }}"><h4 class="recipe-text full-recipe-name">{{recipe.recipe_name}}</h4></a>
-                    <h6 class="card-title recipe-text"><i class="material-icons prefix">restaurant</i>Description<br><p class="card-text"> {{recipe.recipe_description}}</p></h6>
-                    <h6 class="card-title recipe-text"><i class="material-icons prefix">schedule</i>Prep Time (min)<br><p class="card-text"> {{recipe.prep_time}}</p></h6>
-                    <h6 class="card-title recipe-text"><i class="material-icons prefix">schedule</i>Cooking Time (min) <br> <p class="card-text">{{recipe.cooking_time}}</p></h6>
-                    <h6 class="card-title recipe-text"><i class="material-icons prefix">schedule</i>Servings <br> <p class="card-text">{{recipe.servings}}</p></h6>
-                        <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="mr-3 text-decoration-none btn action-btn">
-                                Full recipe
-                                <i class="material-icons right">send</i>      
-                        </a>
-                        {% if session.user|lower == recipe.created_by|lower %}
-                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="mr-3 text-decoration-none btn action-btn">
-                                Edit Recipe
-                                <i class="material-icons right">mode_edit</i>
-                        </a>
-                        {% endif %}
-                        <!--DELETE BUTTON-->
-                        {% if session.user|lower == recipe.created_by|lower %}
-                        <button class="waves-effect waves-light btn action-btn" type="button" name="action" data-toggle="modal" data-target="#staticBackdrop">
-                            Delete Recipe
-                            <i class="material-icons right">delete</i>
-                        {% endif %}    
-                        </button>
-                <!--DELETE BUTTON MODAL-->
-                
-                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="staticBackdropLabel"><i class="material-icons left">warning</i>Delete Recipe</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body pb-5">
-                                        <h6>Are you sure you want to delete this Recipe?</h6>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="text-decoration-none waves-effect waves-light btn btn-danger"> <i class="material-icons left">delete</i>Delete </a>
-                                        <button type="cancel" class="btn btn-secondary ml-3" data-dismiss="modal"><i class="material-icons left">cancel</i>Cancel</button>
-                                    </div>
-                                </div>
-                            </div>
+   <div class="card mb-3 recipe-card">
+      <div class="row no-gutters">
+         <div class="col-md-4 card-img">
+            {% if recipe.image_url %}
+            <img src="{{recipe.image_url}}" class="rounded recipe-image" alt="Image of Recipe outcome" />
+            {% else %}
+            <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded recipe-image" alt="Defualt image of smiling cartoon chef" />
+            {% endif %}
+         </div>
+         <div class="col-md-6">
+            <div class="card-body">
+               <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
+                  <h4 class="recipe-text full-recipe-name">{{recipe.recipe_name}}</h4>
+               </a>
+               <h6 class="card-title recipe-text">
+                  <i class="material-icons prefix">restaurant</i>Description<br>
+                  <p class="card-text"> {{recipe.recipe_description}}</p>
+               </h6>
+               <h6 class="card-title recipe-text">
+                  <i class="material-icons prefix">schedule</i>Prep Time (min)<br>
+                  <p class="card-text"> {{recipe.prep_time}}</p>
+               </h6>
+               <h6 class="card-title recipe-text">
+                  <i class="material-icons prefix">schedule</i>Cooking Time (min) <br> 
+                  <p class="card-text">{{recipe.cooking_time}}</p>
+               </h6>
+               <h6 class="card-title recipe-text">
+                  <i class="material-icons prefix">schedule</i>Servings <br> 
+                  <p class="card-text">{{recipe.servings}}</p>
+               </h6>
+               <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="mr-3 text-decoration-none btn action-btn">
+               Full recipe
+               <i class="material-icons right">send</i>      
+               </a>
+               {% if session.user|lower == recipe.created_by|lower %}
+               <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="mr-3 text-decoration-none btn action-btn">
+               Edit Recipe
+               <i class="material-icons right">mode_edit</i>
+               </a>
+               {% endif %}
+               <!--DELETE BUTTON-->
+               {% if session.user|lower == recipe.created_by|lower %}
+               <button class="waves-effect waves-light btn action-btn" type="button" name="action" data-toggle="modal" data-target="#staticBackdrop">
+               Delete Recipe
+               <i class="material-icons right">delete</i>
+               {% endif %}    
+               </button>
+               <!--DELETE BUTTON MODAL-->
+               <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                     <div class="modal-content">
+                        <div class="modal-header">
+                           <h5 class="modal-title" id="staticBackdropLabel"><i class="material-icons left">warning</i>Delete Recipe</h5>
+                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                           </button>
                         </div>
-                        
-                </div>
-            </div>                        
-        </div>
+                        <div class="modal-body pb-5">
+                           <h6>Are you sure you want to delete this Recipe?</h6>
+                        </div>
+                        <div class="modal-footer">
+                           <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="text-decoration-none waves-effect waves-light btn btn-danger"> <i class="material-icons left">delete</i>Delete </a>
+                           <button type="cancel" class="btn btn-secondary ml-3" data-dismiss="modal"><i class="material-icons left">cancel</i>Cancel</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
-</div>
-
 {% endfor %}
 {% endblock %}

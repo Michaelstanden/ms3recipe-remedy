@@ -1,338 +1,268 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Sansita+Swashed&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Piazzolla:wght@100&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Sansita+Swashed&display=swap') ;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap') ;
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla:wght@100&display=swap') ;
 body {
-background-color:rgb(176, 234, 252);
-text-transform: uppercase;
+background-color : rgb(176, 234, 252);
+text-transform : uppercase;
 }
-
-
-
 .title-heading {
-text-align: center;
-padding: 10px;
-font-family: 'Playfair Display', serif;
-font-size: 4em;
-color: #ffffff;
-background: linear-gradient(to left, rgb(255, 255, 255, 0)0%, rgba(25, 25, 25, 0.8) 5%, rgba(25, 25, 25, 0.8) 95%, rgb(255, 255, 255, 0) 100%);
+text-align : center;
+padding : 10px;
+font-family : 'Playfair Display', serif;
+font-size : 4em;
+color : #ffffff;
+background : linear-gradient(to left, rgb(255, 255, 255, 0) 0%, rgb(25, 25, 25, 0.8) 5%, rgb(25, 25, 25, 0.8) 95%, rgb(255, 255, 255, 0) 100%);
 }
-
 .heading-description {
-padding: 20px;
-margin: 10px;
-line-height: 1.6;
-text-align:center;
-font-family: 'Open Sans', sans-serif;
-color: #ffffff;
-background: linear-gradient(to left, rgb(255, 255, 255, 0)0%, rgba(25, 25, 25, 0.8) 5%, rgba(25, 25, 25, 0.8) 95%, rgb(255, 255, 255, 0) 100%);
+padding : 20px;
+margin : 10px;
+line-height : 1.6;
+text-align : center;
+font-family : 'Open Sans', sans-serif;
+color : #ffffff;
+background : linear-gradient(to left, rgb(255, 255, 255, 0) 0%, rgb(25, 25, 25, 0.8) 5%, rgb(25, 25, 25, 0.8) 95%, rgb(255, 255, 255, 0) 100%);
 }
-
 .hero-image {
-position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 5rem;
-    padding: 5rem 0; 
-    background: url(../images/rr-landing-img.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;
+position : relative;
+width : 100%;
+height : auto;
+min-height : 5rem;
+padding : 5rem 0;
+background : url(../images/rr-landing-img.jpg);
+background-position : center;
+background-repeat : no-repeat;
+background-attachment : scroll;
+background-size : cover;
 }
-
-.btn-links {   
-text-align :center;
-font-size: 2em;
-border-radius: 10px;
-padding:5px;
-margin: 30px;
-font-family: 'Playfair Display', serif;
-border: 2px solid #ffffff;
+.btn-links {
+text-align : center;
+font-size : 2em;
+border-radius : 10px;
+padding : 5px;
+margin : 30px;
+font-family : 'Playfair Display', serif;
+border : #ffffff solid 2px;
 }
-
 .btn-info {
-    color: #ffffff;
-    background-color: #c94f4f;
+color : #ffffff;
+background-color : #c94f4f;
 }
-
 .btn-display {
-    display: flex;
-    justify-content: center;
+display : flex;
+justify-content : center;
 }
-
-
 .navigation {
-background-color: #c94f4f;
-font-family: 'Playfair Display', serif;
+background-color : #c94f4f;
+font-family : 'Playfair Display', serif;
 }
-
-/*full-recipe stylings*/
-.recipe-heading{
-    border: 5px solid;
-    background-color: #ffffff;
-    border-radius: 10px;
+.recipe-heading {
+border : solid 5px;
+background-color : #ffffff;
+border-radius : 10px;
 }
-
 .recipe-card {
-    border: 5px solid;
-    padding: 15px;
-    margin-top: 50px;
-    margin-left:20px;
-    margin-right:20px;
-    border-radius: 10px;
+border : solid 5px;
+padding : 15px;
+margin-top : 50px;
+margin-left : 20px;
+margin-right : 20px;
+border-radius : 10px;
 }
-
 .recipe-text {
- font-family: 'Playfair Display' , serif;
- font-size: 1.5em;
- text-transform: uppercase;
- padding: 15px;
- clear: both;
+font-family : 'Playfair Display', serif;
+font-size : 1.5em;
+text-transform : uppercase;
+padding : 15px;
+clear : both;
 }
-
 .recipe-p-text {
- font-family: 'Piazzolla', serif;
- font-size: 1.5em;
- text-transform: uppercase;
- padding: 15px;
- font-weight: 200;
+font-family : 'Piazzolla', serif;
+font-size : 1.5em;
+text-transform : uppercase;
+padding : 15px;
+font-weight : 200;
 }
-
 .card-text {
- font-family: 'Piazzolla', serif;
- font-size: 1em;
- text-transform: uppercase;
- padding: 15px;
- font-weight: 200;
+font-family : 'Piazzolla', serif;
+font-size : 1em;
+text-transform : uppercase;
+padding : 15px;
+font-weight : 200;
 }
-
 .action-btn {
-    border: solid 2px #000000;
-    padding-bottom: 10px;
-    margin: 5px;
-    font-family: 'Playfair Display' , serif;
-    display: flex;
-    justify-content: center;
-    width: fit-content;
-    border-radius: 10px;
+border : #000000 solid 2px;
+padding-bottom : 10px;
+margin : 5px;
+font-family : 'Playfair Display', serif;
+display : flex;
+justify-content : center;
+width : fit-content;
+border-radius : 10px;
 }
-
 .icons {
-    margin-left: 10px;
+margin-left : 10px;
 }
-
-
 .full-recipe-name {
-    color: #000000;
-    text-decoration: underline;
+color : #000000;
+text-decoration : underline;
 }
-
-
-
-/*add recipe stylings*/ 
 .info-text {
- font-family: 'Playfair Display', sans-serif;
- font-size: 2em;
- text-transform: uppercase;
- padding: 15px;
- margin: auto;
- margin-top:20px;
+font-family : 'Playfair Display', sans-serif;
+font-size : 2em;
+text-transform : uppercase;
+padding : 15px;
+margin : auto;
+margin-top : 20px;
 }
-
 .color-correction {
-    background-color: white;
+background-color : white;
 }
-
-
 .form-box {
-width: fit-content;
-    padding-top: 10px;
-    padding: 10px;
+width : fit-content;
+padding-top : 10px;
+padding : 10px;
 }
-
 .form-icon {
-    width:auto;
+width : auto;
 }
-
 .form-input {
-    margin-left: 100px;
-    width: fit-content;
-    padding-left: 10px;
+margin-left : 100px;
+width : fit-content;
+padding-left : 10px;
 }
-
-/* edit form stylings */
-
 .text-area {
-    margin-left:100px;
+margin-left : 100px;
 }
-
-/*register page */
 .register-form {
-    display: contents;
-    align-content: center;
+display : contents;
+align-content : center;
 }
-
 .register-heading {
-    padding: 20px;
-    font-size: 2em;
-    font-family: 'Playfair Display', sans-serif;
-    background:url(../images/rr-landing-img.jpg);
-    color: #ffffff;
+padding : 20px;
+font-size : 2em;
+font-family : 'Playfair Display', sans-serif;
+background : url(../images/rr-landing-img.jpg);
+color : #ffffff;
 }
-
 .flash {
-    line-height: 3;
-    margin: auto;
-    font-family: 'Playfair Display', sans-serif;
-    color: #ffffff;
-    border: 2px solid #000000;
-    padding: 10px;
-    border-radius: 10px;
-    background-color:#c94f4f;
+line-height : 3;
+margin : auto;
+font-family : 'Playfair Display', sans-serif;
+color : #ffffff;
+border : #000000 solid 2px;
+padding : 10px;
+border-radius : 10px;
+background-color : #c94f4f;
 }
-
 .flash-space {
-    padding-top: 20px;
+padding-top : 20px;
 }
-
 .profile-head {
-    text-align:center;
-    padding:50px;
+text-align : center;
+padding : 50px;
 }
-
 .profile-link {
-    text-align: center;
+text-align : center;
 }
-
 .generic-text {
-    border: 2px solid #000000;
-    background-color: #c94f4f;
-    padding:10px;
-    width:90%;
-    font-family: 'Playfair Display', sans-serif;
-    color:#ffffff;
-    text-align:center;
-    margin:auto;
-    line-height: 1.6;
-    border-radius: 10px;
+border : #000000 solid 2px;
+background-color : #c94f4f;
+padding : 10px;
+width : 90%;
+font-family : 'Playfair Display', sans-serif;
+color : #ffffff;
+text-align : center;
+margin : auto;
+line-height : 1.6;
+border-radius : 10px;
 }
-
 .link-text {
-    text-align:center;
-    padding-bottom:20px;
+text-align : center;
+padding-bottom : 20px;
 }
-
 a {
-    color:#000000;
+color : #000000;
 }
-
 a:hover {
-    color: #ffffff;
+color : #ffffff;
 }
-
-/* recipe card stylings */
 .recipe-image {
-    padding-top: 20px;
-    width:90%;
+padding-top : 20px;
+width : 90%;
 }
-
-
-/* mobile nav stylings */
 .mobile-nav {
-    font-family: 'Playfair Display', serif;
+font-family : 'Playfair Display', serif;
 }
-
 .mobile-content {
-    background-color: #c94f4f;
-    color:#ffffff;
+background-color : #c94f4f;
+color : #ffffff;
 }
-
-/*footer social-media */
-
 .social-media {
-    margin: auto;
-    font-size: 2em;
+margin : auto;
+font-size : 2em;
 }
-
-/*search results and bar*/
-
 .search-card {
-  padding:20px;
-  line-height: 1.6;
-  border: 2px #000000 solid;
-  border-radius: 10px;
+padding : 20px;
+line-height : 1.6;
+border : #000000 solid 2px;
+border-radius : 10px;
 }
-
 .search-bar {
-  margin: auto;
-  width: fit-content;
-  font-family: 'Playfair Display', serif;
+margin : auto;
+width : fit-content;
+font-family : 'Playfair Display', serif;
 }
-
 .view-btn {
-    height: fit-content;
-    border: 2px solid #000000;
-    border-radius: 10px;
+height : fit-content;
+border : #000000 solid 2px;
+border-radius : 10px;
 }
-
 .search-btn {
-    background-color:#c94f4f;
-    color: #ffffff;
-    border: 2px solid #000000;
-    border-radius: 10px;
+background-color : #c94f4f;
+color : #ffffff;
+border : #000000 solid 2px;
+border-radius : 10px;
 }
-
 .modal {
-    display: none;
-    position: fixed;
-    left: 0;
-    right: 0;
-    background-color: #fafafa;
-    padding: 0;
-    max-height: 70%;
-    width: 55%;
-    margin: auto;
-    overflow-y: auto;
-    border-radius: 2px;
-    will-change: top, opacity;
+display : none;
+position : fixed;
+left : 0;
+right : 0;
+background-color : #fafafa;
+padding : 0;
+max-height : 70%;
+width : 55%;
+margin : auto;
+overflow-y : auto;
+border-radius : 2px;
+will-change : top, opacity;
 }
-
-/* recipe of the month button */
 .action-btn2 {
-    border: solid 2px #000000;
-    padding-bottom: 10px;
-    margin: 5px;
-    font-family: 'Playfair Display' , serif;
-    display: flex;
-    justify-content: center;
-    width: fit-content;
-    border-radius: 10px;
-    margin:auto;
+border : #000000 solid 2px;
+padding-bottom : 10px;
+margin : 5px;
+font-family : 'Playfair Display', serif;
+display : flex;
+justify-content : center;
+width : fit-content;
+border-radius : 10px;
+margin : auto;
 }
-
-
-/* media queries */
-
 @media only screen and (max-width: 600px) {
- .card-images {
-     width:90%;
- }
-
- .recipe-image {
-     width: 90%;
- }
-  .modal {
-      padding-right: 10px;
-      padding-left: 10px;
-  }
-  .recipe-text {
- font-family: 'Playfair Display' , serif;
- font-size: 1.5em;
- text-transform: uppercase;
- padding: 0px;
+.card-images {
+width : 90%;
+}
+.recipe-image {
+width : 90%;
+}
+.modal {
+padding-right : 10px;
+padding-left : 10px;
+}
+.recipe-text {
+font-family : 'Playfair Display', serif;
+font-size : 1.5em;
+text-transform : uppercase;
+padding : 0;
 }
 }
-
-

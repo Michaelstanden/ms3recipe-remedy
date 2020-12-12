@@ -1,102 +1,99 @@
 {% extends 'base.html'%}
 {% block content %}
+<!-- Results Card -->
 <section class="container info-text">
-  <div class="row center-align">
-    <div class="col s12 m6 ">
-      <h1>Search Results</h1>
-      <a
-        href="{{ url_for('recipe') }}"
-        class="waves-effect waves-light btn search-btn"
-        >Start New Search</a
-      >
-    </div>
-  </div>
+   <div class="row center-align">
+      <div class="col s12 m6 ">
+         <h1>Search Results</h1>
+         <a
+            href="{{ url_for('recipe') }}"
+            class="waves-effect waves-light btn search-btn"
+            >Start New Search</a
+            >
+      </div>
+   </div>
 </section>
-
 <!-- Results List -->
 <section class="card mb-3 recipe-card">
-  <ul class="">
-    {% for recipe in recipe %}
-    <li>
-      <div class="row collapsible-header">
-        <div class="col s12 m6">
-          {% if recipe.image_url %}
-                            <img src="{{recipe.image_url}}" class="rounded recipe-image" alt="Image of Recipe outcome" />
-                            {% else %}
-                            <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded recipe-image" alt="Defualt image of smiling cartoon chef" />
-                            {% endif %}
-        </div>
-        <div class="col s12 m7">
-          <h5><i class="material-icons">local_dining</i>{{ recipe.recipe_name }}</h5>
-          {{ recipe.cuisine_type }}
-          <p><em>Description: {{ recipe.recipe_description }}</em></p>
-          <p><em>By: {{ recipe.created_by }}</em></p>
-          <p><em>Date: {{ recipe.posted_date }}</em></p>
-        </div>
-        <div class="col s12 m2 left-align btn-links">
-          <a
-            href="{{ url_for('view_search_result', recipe_id=recipe._id) }}"
-            class="waves-effect waves-light btn view-btn"
-            >View Recipe</a
-          >
-        </div>
+   <ul class="">
+      {% for recipe in recipe %}
+      <li>
+         <div class="row collapsible-header">
+            <div class="col s12 m6">
+               {% if recipe.image_url %}
+               <img src="{{recipe.image_url}}" class="rounded recipe-image" alt="Image of Recipe outcome" />
+               {% else %}
+               <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded recipe-image" alt="Defualt image of smiling cartoon chef" />
+               {% endif %}
+            </div>
+            <div class="col s12 m7">
+               <h5><i class="material-icons">local_dining</i>{{ recipe.recipe_name }}</h5>
+               {{ recipe.cuisine_type }}
+               <p><em>Description: {{ recipe.recipe_description }}</em></p>
+               <p><em>By: {{ recipe.created_by }}</em></p>
+               <p><em>Date: {{ recipe.posted_date }}</em></p>
+            </div>
+            <div class="col s12 m2 left-align btn-links">
+               <a
+                  href="{{ url_for('view_search_result', recipe_id=recipe._id) }}"
+                  class="waves-effect waves-light btn view-btn"
+                  >View Recipe</a
+                  >
+            </div>
+         </div>
+         {% endfor %} {% for recipe in ingredients %}
+      </li>
+      <li>
+         <div class="row collapsible-header ">
+            <div class=" col s12 m3">
+               {% if recipe.image_url %}
+               <img src="{{recipe.image_url}}" class="rounded recipe-image" alt="Image of Recipe outcome" />
+               {% else %}
+               <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded recipe-image" alt="Defualt image of smiling cartoon chef" />
+               {% endif %}
+            </div>
+            <div class="col s12 m7">
+               <h5><i class="material-icons">local_dining</i>{{ recipe.recipe_name }}</h5>
+               {{ recipe.cuisine_type }}
+               <p><em>Description: {{ recipe.recipe_description }}</em></p>
+               <p><em>By: {{ recipe.created_by }}</em></p>
+               <p><em>Date: {{ recipe.posted_date }}</em></p>
+            </div>
+            <div class="col s12 m2 left-align btn-links">
+               <a
+                  href="{{ url_for('view_search_result', recipe_id=recipe._id) }}"
+                  class="waves-effect waves-light btn"
+                  >View Recipe</a
+                  >
+            </div>
+         </div>
+         {% endfor %}
+      </li>
+   </ul>
+   <!-- If no recipe, render this -->
+   {% if recipesName == 0 %} {% if ingredientsName == 0 %}
+   <section class="container">
+      <div class="row center-align">
+         <div class="col s12 m6 find_recipe_col no_results">
+            <h2 class="generic-text">Sorry, no recipes found!</h2>
+            <p >Want to search again?</p>
+            <a
+               href="{{ url_for('recipe') }}"
+               class="waves-effect waves-light btn view-btn search-btn"
+               >Find A Recipe</a
+               >
+            {% if session.user %}
+            <p> Or Maybe add your own? </p>
+            <a
+               href="{{ url_for('add_recipe') }}"
+               class="waves-effect waves-light btn view-btn search-btn"
+               >Add your own Recipe</a
+               >
+            {% endif %}
+         </div>
       </div>
-      {% endfor %} {% for recipe in ingredients %}
-    </li>
-
-    <li>
-      <div class="row collapsible-header ">
-        <div class=" col s12 m3">
-          {% if recipe.image_url %}
-                            <img src="{{recipe.image_url}}" class="rounded recipe-image" alt="Image of Recipe outcome" />
-                            {% else %}
-                            <img src="{{url_for('static', filename='images/default-img.jpg')}}" class="rounded recipe-image" alt="Defualt image of smiling cartoon chef" />
-                            {% endif %}
-        </div>
-        <div class="col s12 m7">
-          <h5><i class="material-icons">local_dining</i>{{ recipe.recipe_name }}</h5>
-          {{ recipe.cuisine_type }}
-          <p><em>Description: {{ recipe.recipe_description }}</em></p>
-          <p><em>By: {{ recipe.created_by }}</em></p>
-          <p><em>Date: {{ recipe.posted_date }}</em></p>
-        </div>
-        <div class="col s12 m2 left-align btn-links">
-          <a
-            href="{{ url_for('view_search_result', recipe_id=recipe._id) }}"
-            class="waves-effect waves-light btn"
-            >View Recipe</a
-          >
-        </div>
-      </div>
-      {% endfor %}
-    </li>
-  </ul>
-
-  <!-- If no recipe, render this -->
-
-  {% if recipesName == 0 %} {% if ingredientsName == 0 %}
-  <section class="container">
-    <div class="row center-align">
-      <div class="col s12 m6 find_recipe_col no_results">
-        <h2 class="generic-text">Sorry, no recipes found!</h2>
-        <p >Want to search again?</p>
-        <a
-          href="{{ url_for('recipe') }}"
-          class="waves-effect waves-light btn view-btn search-btn"
-          >Find A Recipe</a
-        >
-        {% if session.user %}
-        <p> Or Maybe add your own? </p>
-        <a
-          href="{{ url_for('add_recipe') }}"
-          class="waves-effect waves-light btn view-btn search-btn"
-          >Add your own Recipe</a
-        >
-        {% endif %}
-      </div>
-    </div>
-  </section>
-  {% endif %} 
-  {% endif %}
+   </section>
+   {% endif %} 
+   {% endif %}
 </section>
 {% endblock %}

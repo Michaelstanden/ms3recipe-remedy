@@ -2,101 +2,99 @@
 {% block content %}
 <h3 class="center-align register-heading">Add Recipe</h3>
 <h1 class="generic-text">Add your own recipes here.<br>
-Simply fill out the form below to add your own recipes to the site.<br>
-Sharing is caring and a great way to build up the recipe remedy culture.</h1>
-
+   Simply fill out the form below to add your own recipes to the site.<br>
+   Sharing is caring and a great way to build up the recipe remedy culture.
+</h1>
 <!--POST A RECIPE FORM-->
 <div class="container mt-5 color-correction">
 <h1 class="text-center mb-5 info-text">Add Your Recipe</h1>
 <div class="row">
-    <form action="{{ url_for('add_recipe') }}" method="POST" class="col s12">
-    <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">restaurant</i>
-          <textarea id="textarea1" name="cuisine_type" type="text" class="materialize-textarea validate form-box" required> </textarea>
-          <label for="recipe" class="form-input">Cuisine Type (e.g Asian, African)</label>
-        </div>
-       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">create</i>
-          <textarea id="textarea2" name="recipe_name" type="text" class="materialize-textarea validate form-box" required> </textarea>
-          <label for="recipe_name" class="form-input">Recipe Name</label>
-        </div>
-       </div>
-       <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">create</i>
-          <textarea id="textarea3" name="recipe_description" class="materialize-textarea validate form-box" required> </textarea>
-          <label for="recipe_description " class="form-input">Recipe Description</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix ">timelapse</i>
-          <textarea id="textarea4" name="prep_time" class="materialize-textarea validate form-box" required> </textarea>
-          <label for="prep_time" class="form-input">Prep Time (minutes) </label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix ">schedule</i>
-          <textarea id="textarea5" name="cooking_time" class="materialize-textarea validate form-box" required> </textarea>
-          <label for="cooking_time" class="form-input">Cooking Time (minutes) </label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">account_circle</i>
-          <textarea id="textarea6" name="servings" class="materialize-textarea validate form-box" required> </textarea>
-          <label for="servings" class="form-input">Serves How many people?</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">kitchen</i>
-          <textarea id="textarea7" name="ingredients" class="materialize-textarea form-box" required></textarea>
-          <label for="textarea7" class="form-input">Ingredients</label>
-          <span class="helper-text"
-          >Add each ingredient of the recipe on a new line.</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">sort</i>
-          <textarea id="textarea8" name="method" class="materialize-textarea form-box" required></textarea>
-          <label for="textarea8" class="form-input">How to make this recipe</label>
-          <span class="helper-text"
-          >Add each step of the recipe on a new line.</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">account_circle</i>
-          <input id="created_by" name="created_by" type="text" class="validate" readonly value="{{ session.user }}">
-          <label for="created_by" class="form-input">Created By</label>
-        </div>
-      </div>
-      <div class="row">
-            <div class="input-field col s12 ">
-                <i class="material-icons prefix">today</i>
-                <input id="posted_date" name="posted_date" type="text" class="datepicker" required> 
-                <label for="datepicker" class="form-input">Date</label> 
-                <span class="helper-text"
-          >Date example dd/mm/yyyy.</span> 
-            </div>
-            </div>
-         <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">insert_link</i>
-          <input id="image_url" name="image_url" type="text" class="validate">
-          <label for="image_url" class="form-input">Image of recipe</label>
-        </div>
-      </div>
-
-
-      <button class="btn waves-effect waves-light action-btn" type="submit" name="action" >Submit
-    <i class="material-icons icons">send</i>
-  </button>
-      
+<form action="{{ url_for('add_recipe') }}" method="POST" class="col s12">
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">restaurant</i>
+      <textarea id="textarea1" name="cuisine_type" type="text" class="materialize-textarea validate form-box" required> </textarea>
+      <label for="recipe" class="form-input">Cuisine Type (e.g Asian, African)</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">create</i>
+      <textarea id="textarea2" name="recipe_name" type="text" class="materialize-textarea validate form-box" required> </textarea>
+      <label for="recipe_name" class="form-input">Recipe Name</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">create</i>
+      <textarea id="textarea3" name="recipe_description" class="materialize-textarea validate form-box" required> </textarea>
+      <label for="recipe_description " class="form-input">Recipe Description</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix ">timelapse</i>
+      <textarea id="textarea4" name="prep_time" class="materialize-textarea validate form-box" required> </textarea>
+      <label for="prep_time" class="form-input">Prep Time (minutes) </label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix ">schedule</i>
+      <textarea id="textarea5" name="cooking_time" class="materialize-textarea validate form-box" required> </textarea>
+      <label for="cooking_time" class="form-input">Cooking Time (minutes) </label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">account_circle</i>
+      <textarea id="textarea6" name="servings" class="materialize-textarea validate form-box" required> </textarea>
+      <label for="servings" class="form-input">Serves How many people?</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">kitchen</i>
+      <textarea id="textarea7" name="ingredients" class="materialize-textarea form-box" required></textarea>
+      <label for="textarea7" class="form-input">Ingredients</label>
+      <span class="helper-text"
+         >Add each ingredient of the recipe on a new line.</span>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">sort</i>
+      <textarea id="textarea8" name="method" class="materialize-textarea form-box" required></textarea>
+      <label for="textarea8" class="form-input">How to make this recipe</label>
+      <span class="helper-text"
+         >Add each step of the recipe on a new line.</span>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">account_circle</i>
+      <input id="created_by" name="created_by" type="text" class="validate" readonly value="{{ session.user }}">
+      <label for="created_by" class="form-input">Created By</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12 ">
+      <i class="material-icons prefix">today</i>
+      <input id="posted_date" name="posted_date" type="text" class="datepicker" required> 
+      <label for="datepicker" class="form-input">Date</label> 
+      <span class="helper-text"
+         >Date example dd/mm/yyyy.</span> 
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">insert_link</i>
+      <input id="image_url" name="image_url" type="text" class="validate">
+      <label for="image_url" class="form-input">Image of recipe</label>
+   </div>
+</div>
+<!-- Submit button -->
+<button class="btn waves-effect waves-light action-btn" type="submit" name="action" >Submit
+<i class="material-icons icons">send</i>
+</button>
 {% endblock %}

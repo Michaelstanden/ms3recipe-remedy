@@ -2,101 +2,97 @@
 {% block content %}
 <h3 class="center-align register-heading">Edit Recipes</h3>
 <h1 class="generic-text">Edit your own recipes here.
-Simply fill out the form below to edit recipes on the site.</h1>
-
+   Simply fill out the form below to edit recipes on the site.
+</h1>
 <!--EDIT A RECIPE FORM-->
 <div class="container mt-5 color-correction">
 <h1 class="text-center mb-5 info-text">Edit Your Recipe</h1>
 <div class="row">
-    <form action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
-    <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">restaurant</i>
-          <textarea id="textarea1" name="cuisine_type" type="text" class="materialize-textarea validate form-box" value="{{recipe.cuisine_type}}" required> {{recipe.cuisine_type}} </textarea> 
-          <label for="recipe">Cuisine Type (e.g Asian, African)</label>
-        </div>
-       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">create</i>
-          <textarea id="textarea2" name="recipe_name" type="text" class="materialize-textarea validate form-box" value="{{recipe.recipe_name}}" required> {{recipe.recipe_name}} </textarea> 
-          <label for="recipe_name">Recipe Name</label>
-         
-        </div>
-       </div>
-       <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">create</i>
-        <textarea id="textarea3" name="recipe_description" type="text" class="materialize-textarea validate form-box" value="{{recipe.recipe_description}}" required> {{recipe.recipe_description}} </textarea> 
-          <label for="textarea3" class="">Recipe Description</label>
-
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">timelapse</i>
-          <textarea id="textarea4" name="prep_time" type="text" class="materialize-textarea validate form-box" value="{{recipe.prep_time}}" required> {{recipe.prep_time}} </textarea> 
-          <label for="prep_time" class="edit-input">Prep Time (minutes) </label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">schedule</i>
-         <textarea id="textarea5" name="cooking_time" type="text" class="materialize-textarea validate form-box" value="{{recipe.cooking_time}}" required> {{recipe.cooking_time}} </textarea> 
-          <label for="cooking_time" class="edit-input">Cooking Time (minutes) </label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">account_circle</i>
-          <textarea id="textarea6" name="servings" type="text" class="materialize-textarea validate form-box" value="{{recipe.servings}}" required> {{recipe.servings}}</textarea> 
-          <label for="servings" class="edit-input">Serves How many people?</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">kitchen</i>
-          <textarea id="textarea7" name="ingredients" class="materialize-textarea validate form-box" value="{{recipe.ingredients}}" required> {{recipe.ingredients}}</textarea>
-          <label for="textarea7">Ingredients</label>
-          <span class="helper-text"
-          >Add each ingredient of the recipe on a new line.</span>
-        </div>
-        </div>
-      <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">sort</i>
-          <textarea id="textarea8" name="method" class="materialize-textarea validate form-box" value="{{recipe.ingredients}}" required> {{recipe.method}}</textarea>
-          <label for="textarea8">How to Cook this recipe</label>
-          <span class="helper-text"
-          >Add each step of the recipe on a new line.</span>
-        </div>
-        </div>
-
-        <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">account_circle</i>
-          <input id="created_by" name="created_by" type="text" class="validate" readonly value="{{ session.user }}">
-          <label for="created_by" class="form-input">Created By</label>
-          <span class="helper-text"
-          >Add Your username in here so we can recognise you.</span>
-        </div>
-      </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">today</i>
-                <input id="posted_date" name="posted_date" type="text" class="datepicker form-input" placeholder="datepicker" value="{{recipe.posted_date}}" required>   
-            </div>
-            </div>
-         <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">insert_link</i>
-          <input id="image_url" name="image_url" type="text" class="validate form-box" value="{{recipe.image_url}}">
-          <label for="image_url">Image of recipe</label>
-        </div>
-      </div>
-
-      <button class="btn waves-effect waves-light action-btn" type="submit" name="action" >Submit
-    <i class="material-icons icons">send</i>
-  </button>
-      
+<form action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">restaurant</i>
+      <textarea id="textarea1" name="cuisine_type" type="text" class="materialize-textarea validate form-box" value="{{recipe.cuisine_type}}" required> {{recipe.cuisine_type}} </textarea> 
+      <label for="recipe">Cuisine Type (e.g Asian, African)</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">create</i>
+      <textarea id="textarea2" name="recipe_name" type="text" class="materialize-textarea validate form-box" value="{{recipe.recipe_name}}" required> {{recipe.recipe_name}} </textarea> 
+      <label for="recipe_name">Recipe Name</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">create</i>
+      <textarea id="textarea3" name="recipe_description" type="text" class="materialize-textarea validate form-box" value="{{recipe.recipe_description}}" required> {{recipe.recipe_description}} </textarea> 
+      <label for="textarea3" class="">Recipe Description</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">timelapse</i>
+      <textarea id="textarea4" name="prep_time" type="text" class="materialize-textarea validate form-box" value="{{recipe.prep_time}}" required> {{recipe.prep_time}} </textarea> 
+      <label for="prep_time" class="edit-input">Prep Time (minutes) </label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">schedule</i>
+      <textarea id="textarea5" name="cooking_time" type="text" class="materialize-textarea validate form-box" value="{{recipe.cooking_time}}" required> {{recipe.cooking_time}} </textarea> 
+      <label for="cooking_time" class="edit-input">Cooking Time (minutes) </label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">account_circle</i>
+      <textarea id="textarea6" name="servings" type="text" class="materialize-textarea validate form-box" value="{{recipe.servings}}" required> {{recipe.servings}}</textarea> 
+      <label for="servings" class="edit-input">Serves How many people?</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">kitchen</i>
+      <textarea id="textarea7" name="ingredients" class="materialize-textarea validate form-box" value="{{recipe.ingredients}}" required> {{recipe.ingredients}}</textarea>
+      <label for="textarea7">Ingredients</label>
+      <span class="helper-text"
+         >Add each ingredient of the recipe on a new line.</span>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">sort</i>
+      <textarea id="textarea8" name="method" class="materialize-textarea validate form-box" value="{{recipe.ingredients}}" required> {{recipe.method}}</textarea>
+      <label for="textarea8">How to Cook this recipe</label>
+      <span class="helper-text"
+         >Add each step of the recipe on a new line.</span>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">account_circle</i>
+      <input id="created_by" name="created_by" type="text" class="validate" readonly value="{{ session.user }}">
+      <label for="created_by" class="form-input">Created By</label>
+      <span class="helper-text"
+         >Add Your username in here so we can recognise you.</span>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">today</i>
+      <input id="posted_date" name="posted_date" type="text" class="datepicker form-input" placeholder="datepicker" value="{{recipe.posted_date}}" required>   
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+      <i class="material-icons prefix">insert_link</i>
+      <input id="image_url" name="image_url" type="text" class="validate form-box" value="{{recipe.image_url}}">
+      <label for="image_url">Image of recipe</label>
+   </div>
+</div>
+<!--Submit Button-->
+<button class="btn waves-effect waves-light action-btn" type="submit" name="action" >Submit
+<i class="material-icons icons">send</i>
+</button>
 {% endblock %}
