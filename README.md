@@ -64,17 +64,15 @@ The website makes creating, reading, updating, and deleting recipes easy and sim
 ## Wireframes
 Using the user stories above, I put together the wireframes for Recipe Remedy using [Balsamiq](https://balsamiq.com/). The wireframes covered desktop, tablet and mobile formats. 
 
-Due to the register function items on the NavBar changed depending on whether a user is logged in or not, additional wireframes were created to show what a registered and non-registered user would look like. When a user is registered they have full functions of the site such as add recipe, profile, and log out. 
 
-[You can view all of the wireframes here](static/readme_docs/wireframes.jpg)
+[You can view Search results wireframes here](static/readme_docs/recipe_remedy_search.bmpr)
+[You can view browser wrieframes here](static/readme_docs/recipe_remedy_browser.bmpr)
+[You can view phone mockups here](static/readme_docs/recipe_remedy_phone.bmpr)
 
-Below are is the homepage wireframes for desktop, mobile and tablet, with both navigation views for a registered in user, and non-registered user.
 
-![Homepage Wireframes Desktop](static/readme_docs/wireframes_desktop.jpg)
-![Homepage Wireframes Device](static/readme_docs/wireframes_device.jpg)
 
 ## Changes to Wireframes:
-During creation the wireframes have changed dramatically. I did not realise the extent of work and knowledge I would need to create all the original functions I intended to have on the site. Originally I intended to have a live scroll through of various recipes that were popular on the site on the landing page, as well as a view my recipes button on the profile page. This was so registered users could go to their profile page once logged in and then view all their recipes they added with the click of a button.
+During creation the wireframes designs have changed dramatically. I did not realise the extent of work and knowledge I would need to create all the original functions I intended to have on the site. Originally I intended to have a live scroll through of various recipes that were popular on the site on the landing page, as well as a view my recipes button on the profile page. This was so registered users could go to their profile page once logged in and then view all their recipes they added with the click of a button.
 
 I had also had a lot of about text on the landing page and had filled it with different cards. I found that although this is a typical layout of a recipe site, it did not fit with my design and aesthetic I wanted for the site. I wanted a site that looked quite simple, clean and accessible to all ages and users. I realised children might want to cook with parents so opted for a paired back, simplistic design that incorporated brighter colours and did not appear as intimidating with loads of text and cards on the site. 
 
