@@ -4,7 +4,7 @@ Recipe Remedy is a demonstration of my learnings and knowledge of all the Code A
 
 Recipe Remedy is a fully responsive, self-built, database-backed, Flask web application. It has been designed and built with the user’s wants and needs first, whilst ensuring the site has user friendly and interactive design expectations.
 
-You can view the live website here: [Recipe Remedy]( https://ms3recipe-mongo.herokuapp.com/
+You can view the live website here: [Recipe Remedy](https://ms3recipe-mongo.herokuapp.com/)
 
 Using the philosophy of the CRUD model the website has been created to provide an online recipe blog which can be added to by a community of users, all users have to do is to sign up. Users are able to store, view, edit and delete their recipes. As well as create an account that will be recognised when they log back in. Users of the site can also view recipes without registering. However they will not have the function to add, edit or delete any existing recipes.
 
@@ -12,7 +12,7 @@ The target audience of the website are families who want to add their recipes, f
 
 Recipe Remedy has been a challenge for myself to compile ideas, designs, integrate structure from database to the user as well as get used to a fully automated library such as materialize. I can see and fully appreciate now the length of work that goes into a fully responsive and live site to ensure users can interact, add and edit their knowledge to a site for future projects.
 
-You can view the live website here: [Recipe Remedy]( https://ms3recipe-mongo.herokuapp.com/ /)
+You can view the live website here: [Recipe Remedy](https://ms3recipe-mongo.herokuapp.com/)
 
 ## Contents
 1. [**UX**](#UX)
@@ -169,7 +169,7 @@ I decided to use MongoDB to store the details entered into the database as it ha
 I used a number of languages, frameworks and libraries to build this website. These include;
 
 * [HTML](https://html.com/)
-* [CSS](https://www.w3.org/Style/CSS/Overview.en.html) 
+* [CSS](https://www.w3.org/Style/CSS/Overview.en.html/) 
 * [JavaScript](https://www.javascript.com/) 
 * [JavaQuery](https://jquery.com/)
 * [Python](https://www.python.org/)
@@ -205,7 +205,7 @@ I used the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to check th
 * 1st test: Spacing errors. No errors to limit coding or clashes.
 
 **W3C HTML Validator**
-I used the [W3C HTML Validator](https://validator.w3.org) to check the validity of my HTML code on all 11 pages.
+I used the [W3C HTML Validator](https://validator.w3.org/) to check the validity of my HTML code on all 11 pages.
 * base.html
     *Error: Bad value {{ url_for('log_in') }} for attribute href on element a: Illegal character in path segment: { is not allowed. This showed for every page that had a url for tag.
 * index.html
@@ -262,7 +262,7 @@ I used the [W3C HTML Validator](https://validator.w3.org) to check the validity 
 
 **Site Owner:**
 
-[View the full testing document here](static/readme_docs/full_testing_document.pdf)
+[View the full testing document here](static/readme_docs/full_testing_document.pdf/)
 
 
 ## Deployment
@@ -294,7 +294,7 @@ MONGO_DBNAME | To be added by user
 Cloning the repository makes a copy of the repository which you download and store on your machine locally.
 
 To make a clone of Recipe Remedy, follow the following steps:
-1. Visit the main repository of Recipe Remedy[here](https://github.com/Michaelstanden/ms3recipe-remedy)
+1. Visit the main repository of Recipe Remedy[here](https://github.com/Michaelstanden/ms3recipe-remedy/)
 1. Above all the repository files and folders, you will find two Green buttons. Click on the one displaying ‘Clone’ with a downward arrow and a download icon.
 1. With the ‘HTTPS’ method selected, click the ‘copy’ button next to the URL. Here you will find the link you will need to copy. The link to copy recipe remedy is: https://michaelstanden.github.io/ms3recipe-remedy/
 1. Open the working directory where you want the repository to be cloned to, and in the terminal use the command and hit enter: 
