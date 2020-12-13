@@ -262,7 +262,7 @@ I used the [W3C HTML Validator](https://validator.w3.org/) to check the validity
 
 **Site Owner:**
 
-[View the full testing document here](static/readme_docs/full_testing_document.pdf/)
+[View the full testing document here](static/readme_docs/full_testing_document.pdf)
 
 
 ## Deployment
