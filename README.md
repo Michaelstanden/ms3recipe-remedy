@@ -65,9 +65,9 @@ The website makes creating, reading, updating, and deleting recipes easy and sim
 Using the user stories above, I put together the wireframes for Recipe Remedy using [Balsamiq](https://balsamiq.com/). The wireframes covered desktop, tablet and mobile formats. 
 
 
-[You can view Search results wireframes here](static/readme_docs/recipe_remedy_search.bmpr)
-[You can view browser wrieframes here](static/readme_docs/recipe_remedy_browser.bmpr)
-[You can view phone mockups here](static/readme_docs/recipe_remedy_phone.bmpr)
+[You can view Search results wireframes here](static/css/readme_docs/recipe_remedy_search.bmpr)
+[You can view browser wrieframes here](static/css/readme_docs/recipe_remedy_browser.bmpr)
+[You can view phone mockups here](static/css/readme_docs/recipe_remedy_phone.bmpr)
 
 
 
@@ -262,7 +262,7 @@ I used the [W3C HTML Validator](https://validator.w3.org/) to check the validity
 
 **Site Owner:**
 
-[View the full testing document here](static/readme_docs/full_testing_document.pdf)
+[View the full testing document here](static/css/readme_docs/full_testing_document.pdf)
 
 
 ## Deployment
