@@ -351,6 +351,17 @@ Open Sans: Pairs nicely with Playfair when looking on googlefonts suggestions. I
 **Recipes:** All recipes added by users, and myself Michael Standen.
 
 **Websites** There have been several websites crucial to my learning of this project they are:
+[flask forms] (https://web.itu.edu.tr/uyar/fad/forms.html)
+[split lines string Python] (https://www.tutorialspoint.com/python3/string_splitlines.htm)
+[MongoDB Tutorial - 13: $regex query operator] (https://www.youtube.com/watch?v=DxjSG8jUGs8)
+[flask login methods] (https://flask-login.readthedocs.io/en/latest/#installation)
+[intro to flask blueprint] (https://www.youtube.com/watch?v=pjVhrIJFUEs) 
+
+**Code**
+Thank you to code institue for the mini project assistance especially for their code on login sessions and cookies sessions.
+
+Myself for the search bar I created back in july using Javascript and an API. I used most of the theory and knowledge from this previous project as well as code.
+
     
 
 

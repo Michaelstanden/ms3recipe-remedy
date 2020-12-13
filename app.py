@@ -91,7 +91,7 @@ def log_in():
         # check to see if username is in database
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
+        #CI code from TIM mini project
         if existing_user:
             # check to see if password matches 
             if check_password_hash(
