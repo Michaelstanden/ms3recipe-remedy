@@ -8,7 +8,6 @@
 <!--POST A RECIPE FORM-->
 <div class="container mt-5 color-correction">
 <h1 class="text-center mb-5 info-text">Add Your Recipe</h1>
-<div class="row">
 <form action="{{ url_for('add_recipe') }}" method="POST" class="col s12">
 <div class="row">
    <div class="input-field col s12">
@@ -28,7 +27,7 @@
    <div class="input-field col s12">
       <i class="material-icons prefix">create</i>
       <textarea id="textarea3" name="recipe_description" class="materialize-textarea validate form-box" required> </textarea>
-      <label for="recipe_description " class="form-input">Recipe Description</label>
+      <label for="recipe_description" class="form-input">Recipe Description</label>
    </div>
 </div>
 <div class="row">
@@ -97,4 +96,6 @@
 <button class="btn waves-effect waves-light action-btn" type="submit" name="action" >Submit
 <i class="material-icons icons">send</i>
 </button>
+</form>
+</div>
 {% endblock %}

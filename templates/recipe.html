@@ -46,22 +46,18 @@
                <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
                   <h4 class="recipe-text full-recipe-name">{{recipe.recipe_name}}</h4>
                </a>
-               <h6 class="card-title recipe-text">
+               <h6 class="card-title recipe-text"></h6>
                   <i class="material-icons prefix">restaurant</i>Description<br>
                   <p class="card-text"> {{recipe.recipe_description}}</p>
-               </h6>
-               <h6 class="card-title recipe-text">
+               <h6 class="card-title recipe-text"></h6>
                   <i class="material-icons prefix">schedule</i>Prep Time (min)<br>
                   <p class="card-text"> {{recipe.prep_time}}</p>
-               </h6>
-               <h6 class="card-title recipe-text">
+               <h6 class="card-title recipe-text"></h6>
                   <i class="material-icons prefix">schedule</i>Cooking Time (min) <br> 
                   <p class="card-text">{{recipe.cooking_time}}</p>
-               </h6>
-               <h6 class="card-title recipe-text">
+               <h6 class="card-title recipe-text"> </h6>
                   <i class="material-icons prefix">schedule</i>Servings <br> 
                   <p class="card-text">{{recipe.servings}}</p>
-               </h6>
                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="mr-3 text-decoration-none btn action-btn">
                Full recipe
                <i class="material-icons right">send</i>      

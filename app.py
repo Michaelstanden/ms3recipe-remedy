@@ -1,4 +1,4 @@
-import os 
+import os
 from flask import Flask, render_template, redirect, request, url_for, flash, \
       redirect, request, session
 from flask_pymongo import PyMongo
@@ -27,12 +27,10 @@ def index():
     return render_template('index.html')
 
 
-
 @app.route('/recipe')
 def recipe():
     recipes = mongo.db.recipe.find().sort("_id", -1)
     return render_template('recipe.html', recipes=recipes)
-
 
 
 # Post a recipe to Mongo DB
@@ -43,13 +41,14 @@ def add_recipe():
         recipe.insert_one(request.form.to_dict())
         flash("Recipe Successfully Added")
         return redirect(url_for('add_recipe'))
-    category= {"category": request.form.get("category") }    
+    category = {"category": request.form.get("category")}    
     categories = mongo.db.categories.find().sort("category", 1)
     return render_template('add_recipe.html',
                            recipe=mongo.db.recipe.find())
 
 
-#edit recipe in edit form, this will change the recipe in the database and on screen
+#edit recipe in edit form, this will change the recipe 
+#in the database and on screen
 @app.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
 def edit_recipe(recipe_id):
     if request.method == 'POST':
@@ -112,8 +111,6 @@ def log_in():
             return redirect(url_for("log_in"))
 
     return render_template("login.html")
-
-
 
 
 @app.route('/log_out')
