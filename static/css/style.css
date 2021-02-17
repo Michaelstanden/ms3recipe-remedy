@@ -47,6 +47,9 @@ border : #ffffff solid 2px;
 color : #ffffff;
 background-color : #c94f4f;
 }
+.index-list {
+font-size: 2em;
+}
 .btn-display {
 display : flex;
 justify-content : center;
