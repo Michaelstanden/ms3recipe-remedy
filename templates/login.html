@@ -18,7 +18,7 @@
             <div class="input-field col s12">
                <i class="prefix light-blue-text text-darken-4"></i>
                <input id="password" name="password" type="password" minlength="5"
-                  maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"  
+                  maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                   class="validate" required >
                <label for="password"><i class="material-icons">fingerprint</i>Password</label>
             </div>
